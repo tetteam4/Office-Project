@@ -16,6 +16,6 @@ export default {
     },
   },
   plugins: [
-    require("tailwind-scrollbar")({ nocompatible: true }), // Enable the plugin
+   
   ],
 };
