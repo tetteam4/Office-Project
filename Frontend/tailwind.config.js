@@ -2,7 +2,20 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      scrollbar: {
+        width: "5px",
+        thumb: {
+          backgroundColor: "#4f46e5", // Indigo-600
+          borderRadius: "5px",
+        },
+        track: {
+          backgroundColor: "#f3f4f6", // Gray-100
+        },
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-scrollbar")({ nocompatible: true }), // Enable the plugin
+  ],
 };
