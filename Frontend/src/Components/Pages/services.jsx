@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './navbar';
+
 
 const Services = () => {
   const services = [
@@ -47,7 +47,7 @@ const Services = () => {
 
   return (
     <div>
-     <Navbar/>
+    
     <div className="bg-gray-100 p-8">
 
 

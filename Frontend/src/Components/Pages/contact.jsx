@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import axios from 'axios';
-import Navbar from './navbar';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +55,7 @@ const Contact = () => {
 
   return (
 <div> 
-  <Navbar/>
+
     <div className="bg-gray-100 p-8 rounded-lg shadow-lg max-w-lg mx-auto">
       <h2 className="text-4xl font-bold text-center mb-6 text-blue-700">Contact Us</h2>
 

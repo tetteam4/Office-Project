@@ -1,23 +1,23 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Services from './Components/services';
-import About from './Components/About';
-import Contact from './Components/contact';
-import HomePage from './Components/Home';
-import Navbar from './Components/navbar.jsx';
+import Services from './Components/Pages/services.jsx';
+import About from './Components/Pages/About.jsx';
+import Contact from './Components/Pages/contact.jsx';
+import HomePage from './Components/Pages/Home.jsx';
+
 import AddMember from './Components/AddMember';
 import VerifyEmail from './Components/verifyEmail';
 import Dashboard from './Components/dashboard/dashboard.jsx';
-import LoginPage from './Components/loginPage.jsx';
+import LoginPage from './Components/Pages/loginPage.jsx';
 
 const App = () => {
   return (
     <Router
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
+      // future={{
+      //   v7_startTransition: true,
+      //   v7_relativeSplatPath: true,
+      // }}
     >
       <div>
         <Routes>

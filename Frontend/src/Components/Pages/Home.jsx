@@ -1,8 +1,9 @@
 import React from 'react';
-import Navbar from './navbar';
+import Navbar from '../Navbar/navbar';
+
 
 const HomePage = () => {
-  localStorage.setItem('darkMode',false)
+ 
   return (
     <div className="bg-gray-100 font-sans ">
       <Navbar/>
