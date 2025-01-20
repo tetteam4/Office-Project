@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import LineChart from "../../chart/chart";
 
 const IncomeManager = () => {
   const [incomes, setIncomes] = useState([]);
-  const [formData, setFormData] = useState({ source: "", amount: "", takingDate: "" });
+  const [formData, setFormData] = useState({
+    source: "",
+    amount: "",
+    takingDate: "",
+  });
   const [editingIncome, setEditingIncome] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -51,7 +56,11 @@ const IncomeManager = () => {
   // Edit an existing income
   const editIncome = (income) => {
     setEditingIncome(income);
-    setFormData({ source: income.source, amount: income.amount, date: income.date });
+    setFormData({
+      source: income.source,
+      amount: income.amount,
+      date: income.date,
+    });
   };
 
   const updateIncome = async () => {
@@ -162,7 +171,9 @@ const IncomeManager = () => {
             <tr key={income.id}>
               <td className="border border-gray-300 p-2">{income.source}</td>
               <td className="border border-gray-300 p-2">{income.amount}</td>
-              <td className="border border-gray-300 p-2">{income.takingDate}</td>
+              <td className="border border-gray-300 p-2">
+                {income.takingDate}
+              </td>
               <td className="border border-gray-300 p-2 flex justify-center items-center">
                 <button
                   onClick={() => editIncome(income)}
@@ -183,6 +194,11 @@ const IncomeManager = () => {
       </table>
 
       {loading && <div className="text-gray-500 mt-4">Loading...</div>}
+      <div className="">
+
+          <LineChart />
+
+      </div>
     </div>
   );
 };

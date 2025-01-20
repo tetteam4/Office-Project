@@ -70,7 +70,7 @@ const LoginPage = () => {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
-              <span className="absolute top-8 right-3 text-gray-400">
+              <span className="absolute top-10 right-3 text-gray-400">
                 <FiMail size={20} />
               </span>
             </div>
@@ -92,7 +92,7 @@ const LoginPage = () => {
                 required
                 autoComplete="current-password"
               />
-              <span className="absolute top-8 right-3 text-gray-400">
+              <span className="absolute top-10 right-3 text-gray-400">
                 <MdOutlineLock size={20} />
               </span>
             </div>
