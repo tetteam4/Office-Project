@@ -36,6 +36,28 @@ export const NAV_DATA  = [
           ],
         },
         {
+          category: "Business Websites Group",
+          items: [
+            { name: "E-commerce Website Design", path: "/ecommerce-website-design" },
+            { name: "Jewelry Website Design", path: "/jewelry-website-design" },
+            { name: "Real Estate Website Design", path: "/real-estate-website-design" },
+            { name: "Travel Agency Website Design", path: "/travel-agency-website-design" },
+            { name: "Educational Website Design", path: "/educational-website-design" },
+            { name: "Legal Website Design", path: "/legal-website-design" },
+          ],
+        },
+        {
+          category: "Business Websites Group",
+          items: [
+            { name: "E-commerce Website Design", path: "/ecommerce-website-design" },
+            { name: "Jewelry Website Design", path: "/jewelry-website-design" },
+            { name: "Real Estate Website Design", path: "/real-estate-website-design" },
+            { name: "Travel Agency Website Design", path: "/travel-agency-website-design" },
+            { name: "Educational Website Design", path: "/educational-website-design" },
+            { name: "Legal Website Design", path: "/legal-website-design" },
+          ],
+        },
+        {
           category: "Engineering Websites Group",
           items: [
             { name: "Corporate Website Design", path: "/corporate-website-design" },
@@ -95,6 +117,14 @@ export const NAV_DATA  = [
             { name: "Domain Registration", path: "/domain-registration" },
             { name: "Virtual Server", path: "/virtual-server" },
             { name: "Dedicated Server", path: "/dedicated-server" },
+          ],
+        },
+        {
+          category: "Digital Marketing",
+          items: [
+            { name: "SEO", path: "/seo" },
+            { name: "Google Ads", path: "/google-ads" },
+            { name: "Professional Consulting", path: "/professional-consulting" },
           ],
         },
         {
