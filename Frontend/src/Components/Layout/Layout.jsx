@@ -7,11 +7,11 @@ import Navbar from "../Navbar/navbar";
 const Layout = () => {
   return (
     <div className="">
-      <div className=" border">
+      <div className=" ">
         <Header />
         <Navbar />
       </div>
-      <div className="mt-[135px]">
+      <div className="">
         <Outlet />
       </div>
     </div>
