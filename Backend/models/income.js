@@ -8,7 +8,7 @@ Incomes.init({
         type: DataTypes.STRING,
         allowNull: false,
     }, amount: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     takingDate: {

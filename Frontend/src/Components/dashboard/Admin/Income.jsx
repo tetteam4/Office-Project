@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import LineChart from "../../chart/chart";
+import BarChart from "../../chart/chart";
 
 const IncomeManager = () => {
   const [incomes, setIncomes] = useState([]);
@@ -196,7 +196,7 @@ const IncomeManager = () => {
       {loading && <div className="text-gray-500 mt-4">Loading...</div>}
       <div className="">
 
-          <LineChart />
+          <BarChart />
 
       </div>
     </div>
