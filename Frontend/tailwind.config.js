@@ -14,6 +14,9 @@ export default {
           backgroundColor: "#f3f4f6", // Gray-100
         },
       },
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif','Poppins'], // Using Roboto as the default sans-serif font
+      },
     },
     screens: {
       sm: "640px", // Mobile

@@ -5,10 +5,10 @@ import React from 'react';
 const HomePage = () => {
  
   return (
-    <div className="bg-gray-100 border-2 font-sans ">
+    <div className="bg-gray-100  font-sans ">
     
       {/* Hero Section */} 
-      <section className=" text-white py-20">
+      <section className="bg-blue-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Welcome to TET Group</h1>
           <p className="text-lg md:text-2xl mb-8">
