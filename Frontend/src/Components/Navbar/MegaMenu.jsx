@@ -1,11 +1,17 @@
 import React from "react";
 
 const MegaMenu = ({ subCategories = [], isVisible }) => {
-  // Determine the number of columns dynamically based on the number of subcategories
-  const gridColsClass =
-    subCategories.length <= 4
-      ? `grid-cols-${subCategories.length}`
-      : "grid-cols-5";
+  // Define a function to get the grid column class
+  const getGridColsClass = () => {
+    const length = subCategories.length;
+    if (length === 1) return "grid-cols-1";
+    if (length === 2) return "grid-cols-2";
+    if (length === 3) return "grid-cols-3";
+    if (length >= 4) return "grid-cols-5";
+    return "";
+  };
+
+  const gridColsClass = getGridColsClass();
 
   return (
     <div
@@ -24,8 +30,13 @@ const MegaMenu = ({ subCategories = [], isVisible }) => {
         {Array.isArray(subCategories) &&
           subCategories.map((category, index) => (
             <div key={index} className="w-full">
-              <h3 className="font-bold text-md mb-2 border-b-2 pb-2">{category.category}</h3>
-              <ul className="space-y-2">
+             <div className="space-y-4">
+             <span className="text-3xl text-red-600"> {category.icon}</span>
+              <h3 className="font-bold text-md mb-2 border-b-2 pb-2">
+                {category.category}
+              </h3>
+             </div>
+              <ul className="space-y-2 mt-3">
                 {category.items.map((item, idx) => (
                   <li key={idx}>
                     <a
