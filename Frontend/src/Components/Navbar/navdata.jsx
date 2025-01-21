@@ -1,4 +1,6 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { FaPalette, FaServer, FaBullhorn } from "react-icons/fa"; 
+import { FaMoneyBillWave, FaBuilding, FaTools, FaIndustry, FaPencilRuler } from "react-icons/fa";
 
 export const NAV_DATA  = [
     { name: "Home", path: "/" , icon: null,
@@ -15,6 +17,7 @@ export const NAV_DATA  = [
       subCategories: [
         {
           category: "Financial Websites Group",
+          icon: <FaMoneyBillWave />, // Icon for financial websites
           items: [
             { name: "Currency Exchange Website Design", path: "/currency-exchange-website-design" },
             { name: "Investment Website Design", path: "/investment-website-design" },
@@ -26,28 +29,7 @@ export const NAV_DATA  = [
         },
         {
           category: "Business Websites Group",
-          items: [
-            { name: "E-commerce Website Design", path: "/ecommerce-website-design" },
-            { name: "Jewelry Website Design", path: "/jewelry-website-design" },
-            { name: "Real Estate Website Design", path: "/real-estate-website-design" },
-            { name: "Travel Agency Website Design", path: "/travel-agency-website-design" },
-            { name: "Educational Website Design", path: "/educational-website-design" },
-            { name: "Legal Website Design", path: "/legal-website-design" },
-          ],
-        },
-        {
-          category: "Business Websites Group",
-          items: [
-            { name: "E-commerce Website Design", path: "/ecommerce-website-design" },
-            { name: "Jewelry Website Design", path: "/jewelry-website-design" },
-            { name: "Real Estate Website Design", path: "/real-estate-website-design" },
-            { name: "Travel Agency Website Design", path: "/travel-agency-website-design" },
-            { name: "Educational Website Design", path: "/educational-website-design" },
-            { name: "Legal Website Design", path: "/legal-website-design" },
-          ],
-        },
-        {
-          category: "Business Websites Group",
+          icon: <FaBuilding />, // Icon for business websites
           items: [
             { name: "E-commerce Website Design", path: "/ecommerce-website-design" },
             { name: "Jewelry Website Design", path: "/jewelry-website-design" },
@@ -59,6 +41,7 @@ export const NAV_DATA  = [
         },
         {
           category: "Engineering Websites Group",
+          icon: <FaTools />, // Icon for engineering websites
           items: [
             { name: "Corporate Website Design", path: "/corporate-website-design" },
             { name: "Industrial Website Design", path: "/industrial-website-design" },
@@ -70,6 +53,7 @@ export const NAV_DATA  = [
         },
         {
           category: "Artistic Websites Group",
+          icon: <FaPencilRuler />, // Icon for artistic websites
           items: [
             { name: "Beauty Salon Website Design", path: "/beauty-salon-website-design" },
             { name: "Interior Design Website Design", path: "/interior-design-website-design" },
@@ -81,6 +65,7 @@ export const NAV_DATA  = [
         },
         {
           category: "Medical Websites Group",
+          icon: <FaIndustry />, // Icon for medical websites
           items: [
             { name: "Medical Website Design", path: "/medical-website-design" },
             { name: "Dental Website Design", path: "/dental-website-design" },
@@ -94,7 +79,7 @@ export const NAV_DATA  = [
     { name: "Portfolio", path: "/portfolio" },
     {
       name: "Services",
-      
+      path: "/services",
       icon: (
         <MdKeyboardArrowDown
           size={24}
@@ -104,6 +89,7 @@ export const NAV_DATA  = [
       subCategories: [
         {
           category: "User Interface and User Experience Design",
+          icon: <FaPalette />, // Icon for UI/UX design
           items: [
             { name: "Cryptocurrency Website Design", path: "/crypto-website-design" },
             { name: "E-commerce Website Design", path: "/ecommerce-website-design" },
@@ -113,6 +99,7 @@ export const NAV_DATA  = [
         },
         {
           category: "Web Service Development",
+          icon: <FaServer />, // Icon for web services
           items: [
             { name: "Domain Registration", path: "/domain-registration" },
             { name: "Virtual Server", path: "/virtual-server" },
@@ -121,14 +108,7 @@ export const NAV_DATA  = [
         },
         {
           category: "Digital Marketing",
-          items: [
-            { name: "SEO", path: "/seo" },
-            { name: "Google Ads", path: "/google-ads" },
-            { name: "Professional Consulting", path: "/professional-consulting" },
-          ],
-        },
-        {
-          category: "Digital Marketing",
+          icon: <FaBullhorn />, // Icon for marketing
           items: [
             { name: "SEO", path: "/seo" },
             { name: "Google Ads", path: "/google-ads" },

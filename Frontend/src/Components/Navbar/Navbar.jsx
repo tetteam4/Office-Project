@@ -36,15 +36,16 @@ const Navbar = () => {
     >
      
       <div className="bg-white px-4 py-2  flex justify-center items-center">
-        <ul className="lg:flex lg:gap-9 p-4 lg:p-0 space-y-4 lg:space-y-0 flex justify-center items-center w-full">
+        <ul className="lg:flex lg:gap-4 p-4 lg:p-0 space-y-4 lg:space-y-0 flex justify-center items-center w-full">
           {NAV_DATA.map((item, index) => (
             <li
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
+              onClick={handleMouseLeave}
               onFocus={() => handleMouseEnter(index)}
               onBlur={handleMouseLeave}
-              className="px-2 py-2  group"
+              className="px-1 py-2  group"
               role="menuitem"
             >
               <Link
@@ -64,13 +65,15 @@ const Navbar = () => {
               {delayedItem === index && item.subCategories && (
                 <>
                   <div
-                    className="fixed left-0 right-0 top- bottom-0 bg-black opacity-50 z-10"
-                    onClick={handleMouseLeave}
+                    className="fixed left-0 right-0 top-40
+                     bottom-0 bg-black opacity-50 z-10"
+                     onMouseEnter={handleMouseLeave}
+                   
                   ></div>
                   <div
                     className={`${
-                      isScrolled ? "fixed top-0" : "absolute top-12"
-                    } left-0 w-full border z-20`}
+                      isScrolled ? "fixed top-9" : "absolute top-12"
+                    } left-0 w-full  z-20`}
                   >
                     <MegaMenu subCategories={item.subCategories} isVisible={true} />
                   </div>
