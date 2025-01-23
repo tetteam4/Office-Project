@@ -1,16 +1,17 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Services from "./Components/Pages/services.jsx";
-import About from "./Components/Pages/About.jsx";
-import Contact from "./Components/Pages/contact.jsx";
-import HomePage from "./Components/Pages/Home.jsx";
+
+import About from "./Pages/About.jsx";
+import Contact from "./Pages/contact.jsx";
+import HomePage from "./Pages/Home.jsx";
 
 import AddMember from "./Components/AddMember";
 import VerifyEmail from "./Components/verifyEmail";
 import Dashboard from "./Components/dashboard/dashboard.jsx";
-import LoginPage from "./Components/Pages/loginPage.jsx";
+import LoginPage from "./Pages/loginPage.jsx";
 import Layout from "./Components/Layout/Layout.jsx";
+import Services from "./Pages/services.jsx";
 
 const App = () => {
   return (

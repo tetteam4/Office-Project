@@ -1,6 +1,7 @@
 import React from 'react';
-import Hero_Home from '../HeroPage/Hero_Home';
-import Tet_Detials from '../Home/Tet_Detials';
+
+import Hero_Home from '../Components/HeroPage/Hero_Home';
+import Tet_Detials from '../Components/Home/Tet_Detials';
 
 
 
