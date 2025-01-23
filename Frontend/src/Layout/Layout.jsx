@@ -1,8 +1,8 @@
 import React , {useEffect , useState} from "react";
 
 import { Outlet } from "react-router-dom";
-import Header from "../Navbar/Header";
-import Navbar from "../Navbar/Navbar";
+import Header from "../Components/Navbar/Header";
+import Navbar from "../Components/Navbar/Navbar";
 import { IoMdArrowRoundUp } from "react-icons/io";
 
 

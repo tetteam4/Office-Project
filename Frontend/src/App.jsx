@@ -10,8 +10,12 @@ import AddMember from "./Components/AddMember";
 import VerifyEmail from "./Components/verifyEmail";
 import Dashboard from "./Components/dashboard/dashboard.jsx";
 import LoginPage from "./Pages/loginPage.jsx";
-import Layout from "./Components/Layout/Layout.jsx";
+import Layout from "./Layout/Layout.jsx";
 import Services from "./Pages/services.jsx";
+import Portfolio from "./Pages/Portfolio.jsx";
+import Web_Design from "./Pages/Web_Design.jsx";
+import Blog from "./Pages/Blog.jsx";
+import Web_Seo from "./Pages/Web_Seo.jsx";
 
 const App = () => {
   return (
@@ -28,6 +32,10 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/webdesign" element={<Web_Design />} />
+            <Route path="/website-seo" element={<Web_Seo />} />
+            <Route path="/blog" element={<Blog />} />
           </Route>
 
           <Route path="/verify_email/*" element={<VerifyEmail />} />
