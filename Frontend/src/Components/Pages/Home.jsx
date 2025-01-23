@@ -1,13 +1,16 @@
 import React from 'react';
 import Hero_Home from '../HeroPage/Hero_Home';
+import Tet_Detials from '../Home/Tet_Detials';
 
 
 
 const HomePage = () => {
  
   return (
-    <div className="bg-gray-100  font-sans ">
-    <Hero_Home />
+    <div className="  font-sans ">
+    <Hero_Home /> 
+    {/* TET */}
+    <Tet_Detials />
       {/* Hero Section */} 
       <section className="bg-blue-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">

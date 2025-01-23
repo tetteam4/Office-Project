@@ -25,6 +25,33 @@ const About = () => {
           <li>Collaboration: We believe in teamwork and open communication.</li>
         </ul>
       </section>
+      <section className="mb-8">
+        <h3 className="text-2xl font-semibold mb-4">Our Values</h3>
+        <ul className="list-disc list-inside text-gray-700">
+          <li>Integrity: We uphold honesty and transparency in all our dealings.</li>
+          <li>Innovation: We embrace creativity and challenge the status quo.</li>
+          <li>Excellence: We are committed to delivering high-quality solutions and services.</li>
+          <li>Collaboration: We believe in teamwork and open communication.</li>
+        </ul>
+      </section>
+      <section className="mb-8">
+        <h3 className="text-2xl font-semibold mb-4">Our Values</h3>
+        <ul className="list-disc list-inside text-gray-700">
+          <li>Integrity: We uphold honesty and transparency in all our dealings.</li>
+          <li>Innovation: We embrace creativity and challenge the status quo.</li>
+          <li>Excellence: We are committed to delivering high-quality solutions and services.</li>
+          <li>Collaboration: We believe in teamwork and open communication.</li>
+        </ul>
+      </section>
+      <section className="mb-8">
+        <h3 className="text-2xl font-semibold mb-4">Our Values</h3>
+        <ul className="list-disc list-inside text-gray-700">
+          <li>Integrity: We uphold honesty and transparency in all our dealings.</li>
+          <li>Innovation: We embrace creativity and challenge the status quo.</li>
+          <li>Excellence: We are committed to delivering high-quality solutions and services.</li>
+          <li>Collaboration: We believe in teamwork and open communication.</li>
+        </ul>
+      </section>
 
       <section className="mb-8">
         <h3 className="text-2xl font-semibold mb-4">Our Team</h3>
