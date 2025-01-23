@@ -1,10 +1,10 @@
-import React , {useEffect , useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import { Outlet } from "react-router-dom";
 import Header from "../Components/Navbar/Header";
 import Navbar from "../Components/Navbar/Navbar";
 import { IoMdArrowRoundUp } from "react-icons/io";
-
+import Footer from "../Components/Footer/Footer";
 
 const Layout = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +39,9 @@ const Layout = () => {
       </div>
       <div className="">
         <Outlet />
+      </div>
+      <div>
+        <Footer />
       </div>
       {isScrolled && (
         <div className="fixed bottom-10 right-10">
