@@ -211,7 +211,7 @@ const Dashboard = () => {
                 }}
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
               >
-                <FaUserFriends className="mr-2" /> Expense Management
+                <GiMoneyStack className="mr-2" /> Expense Management
               </li>
               <li
                 onClick={() => {
@@ -220,7 +220,7 @@ const Dashboard = () => {
                 }}
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
               >
-                <FaUserFriends className="mr-2" /> Income Management
+                <GiMoneyStack className="mr-2" /> Income Management
               </li>
 
               <li
@@ -230,7 +230,7 @@ const Dashboard = () => {
                 }}
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
               >
-                <FaEnvelope className="mr-2" /> Messages
+                <FaEnvelope size={24} className="mr-2" /> Messages
               </li>
               <li
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
@@ -261,21 +261,21 @@ const Dashboard = () => {
             onClick={() => setActiveComponent("memberManagement")}
             className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
           >
-            <FaUserFriends className="mr-2" />{" "}
+            <FaUserFriends size={24} className="mr-2" />{" "}
             {isSidebarExpanded && "Member Management"}
           </li>
           <li
             onClick={() => setActiveComponent("expenseManagement")}
             className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
           >
-            <GiMoneyStack className="mr-2" />{" "}
+            <GiMoneyStack size={28} className="mr-2" />{" "}
             {isSidebarExpanded && "Expense Management"}
           </li>
           <li
             onClick={() => setActiveComponent("IncomeManager")}
             className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
           >
-            <GiMoneyStack className="mr-2" />{" "}
+            <GiMoneyStack size={28} className="mr-2" />{" "}
             {isSidebarExpanded && "Income Management"}
           </li>
 
@@ -283,13 +283,13 @@ const Dashboard = () => {
             onClick={() => setActiveComponent("messages")}
             className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
           >
-            <FaEnvelope className="mr-2" /> {isSidebarExpanded && "Messages"}
+            <FaEnvelope  size={20} className="mr-2" /> {isSidebarExpanded && "Messages"}
           </li>
           <li
             className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
             onClick={handleLogout}
           >
-            <FaSignOutAlt className="mr-2" /> {isSidebarExpanded && "Logout"}
+            <FaSignOutAlt size={20}  className="mr-2" /> {isSidebarExpanded && "Logout"}
           </li>
         </ul>
       </aside>
