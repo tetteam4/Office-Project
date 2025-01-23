@@ -24,12 +24,12 @@ const Hero_Home = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center text-white h-full">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">Welcome to Our Website</h1>
+        <h1 className="text-4xl md:text-4xl font-bold mb-6">Crafting Modern Websites That Empower Your Business</h1>
         <p className="text-lg md:text-xl mb-8">
-          Explore amazing features and incredible design.
+        Website design, UI/UX design, and digital marketing.
         </p>
-        <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-semibold transition">
-          Get Started
+        <button className="px-7 py-3 bg-[#02DB81] hover:bg-[#2d9469] text-white rounded-full font-semibold transition">
+          Our Services
         </button>
       </div>
     </div>
