@@ -7,10 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "start-frontend": " npm run dev",
-    "start-backend": "cd.. && cd Backend && npm start",
-    "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\""
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
