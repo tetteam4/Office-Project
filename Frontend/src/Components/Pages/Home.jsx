@@ -1,4 +1,5 @@
 import React from 'react';
+import Hero_Home from '../HeroPage/Hero_Home';
 
 
 
@@ -6,7 +7,7 @@ const HomePage = () => {
  
   return (
     <div className="bg-gray-100  font-sans ">
-    
+    <Hero_Home />
       {/* Hero Section */} 
       <section className="bg-blue-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">

@@ -1,11 +1,39 @@
-import React from 'react'
+import React from "react";
+import hero from "../../assets/hero.mp4"
 
 const Hero_Home = () => {
   return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit placeat est deleniti, sapiente commodi aspernatur vel voluptatem! Aut dolores rerum perferendis doloremque amet autem incidunt dicta at debitis nam. Harum!
-    </div>
-  )
-}
+    <div className="relative w-full h-[81vh]">
+      {/* Background Video */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source
+          src={hero}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
 
-export default Hero_Home
+      {/* Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white h-full">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">Welcome to Our Website</h1>
+        <p className="text-lg md:text-xl mb-8">
+          Explore amazing features and incredible design.
+        </p>
+        <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-semibold transition">
+          Get Started
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Hero_Home;
