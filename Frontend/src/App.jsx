@@ -1,16 +1,21 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Services from "./Components/Pages/services.jsx";
-import About from "./Components/Pages/About.jsx";
-import Contact from "./Components/Pages/contact.jsx";
-import HomePage from "./Components/Pages/Home.jsx";
+
+import About from "./Pages/About.jsx";
+import Contact from "./Pages/contact.jsx";
+import HomePage from "./Pages/Home.jsx";
 
 import AddMember from "./Components/AddMember";
 import VerifyEmail from "./Components/verifyEmail";
 import Dashboard from "./Components/dashboard/dashboard.jsx";
-import LoginPage from "./Components/Pages/loginPage.jsx";
-import Layout from "./Components/Layout/Layout.jsx";
+import LoginPage from "./Pages/loginPage.jsx";
+import Layout from "./Layout/Layout.jsx";
+import Services from "./Pages/services.jsx";
+import Portfolio from "./Pages/Portfolio.jsx";
+import Web_Design from "./Pages/Web_Design.jsx";
+import Blog from "./Pages/Blog.jsx";
+import Web_Seo from "./Pages/Web_Seo.jsx";
 
 const App = () => {
   return (
@@ -27,6 +32,10 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/webdesign" element={<Web_Design />} />
+            <Route path="/website-seo" element={<Web_Seo />} />
+            <Route path="/blog" element={<Blog />} />
           </Route>
 
           <Route path="/verify_email/*" element={<VerifyEmail />} />

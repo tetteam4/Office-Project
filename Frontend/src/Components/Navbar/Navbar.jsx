@@ -50,7 +50,7 @@ const Navbar = () => {
             >
               <Link
                 to={item.path}
-                className="text-gray-600 transition-colors flex items-center text-lg font-sans font-semibold duration-300 hover:text-gray-900"
+                className="text-gray-600 transition-colors flex items-center text-md font-sans font-semibold duration-300 hover:text-gray-900"
                 aria-haspopup={!!item.subCategories}
                 aria-expanded={delayedItem === index}
               >

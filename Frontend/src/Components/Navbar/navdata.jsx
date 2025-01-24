@@ -7,7 +7,7 @@ export const NAV_DATA  = [
       subCategories: null, },
     {
       name: "Website Design",
-      
+      path: "/webdesign",
       icon: (
         <MdKeyboardArrowDown
           size={24}
