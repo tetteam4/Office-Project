@@ -1,9 +1,7 @@
 import React from 'react';
 import { FaUsers, FaHeadset, FaRegHandshake, FaRegStar, FaChartLine } from 'react-icons/fa';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Import basic Swiper styles
-import 'swiper/css/pagination'; // Import pagination styles
-import 'swiper/css/navigation'; // Import navigation styles (if using arrows)
+
+import Slider from './Slider';
 
 const BeCreativeAndDistinct = () => {
   return (
@@ -40,30 +38,7 @@ const BeCreativeAndDistinct = () => {
 
 
       <div className="max-w-4xl h-[400px] border mx-auto">
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={2}
-          loop={true}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          className="customer-slider"
-        >
-          <SwiperSlide>
-            <p className="text-lg italic text-gray-600">
-              "The team exceeded our expectations, offering innovative solutions and incredible support!" - Customer A
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <p className="text-lg italic text-gray-600">
-              "We’ve been working with them for years, and their service just gets better and better!" - Customer B
-            </p>
-          </SwiperSlide>
-          <SwiperSlide>
-            <p className="text-lg italic text-gray-600">
-              "A truly professional team that always delivers on time and with quality!" - Customer C
-            </p>
-          </SwiperSlide>
-        </Swiper>
+        <Slider />
       </div>
     </div>
   );
