@@ -36,7 +36,7 @@ const Header = () => {
 
   const repsonsiveHandler = () => {
     setIsOpen(!isOpne);
-    console.log("IsIpen")
+    console.log("IsIpen");
   };
 
   return (
@@ -115,11 +115,16 @@ const Header = () => {
           </span>
         </div>
       </div>
-      {
-        isOpne && (
-<RespNavbar />
-        )
-      }
+      {isOpne && (
+        <div>
+          <div
+            onClick={repsonsiveHandler}
+            className="fixed left-0 right-0 top-0
+                     bottom-0 bg-black opacity-80 z-10"
+          ></div>
+          <RespNavbar />
+        </div>
+      )}
     </header>
   );
 };
