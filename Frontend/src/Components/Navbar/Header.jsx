@@ -12,6 +12,7 @@ import { Menu } from "@mui/material";
 
 const Header = () => {
   const [isClick, setIsClick] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [isOpne, setIsOpen] = useState(false);
   const [cardItems, setCardItems] = useState(0);
   const [darkMode, setDarkMode] = useState(() => {
@@ -36,14 +37,15 @@ const Header = () => {
 
   const repsonsiveHandler = () => {
     setIsOpen(!isOpne);
+    setIsExpanded(true);
     console.log("IsIpen");
   };
 
   return (
-    <header className="bg-white fixed z-40 p-4 top-0 left-0 right-0">
-      <div className="container mx-auto grid grid-cols-2">
+    <header className="bg-white  fixed z-40 p-4 top-0 left-0 right-0">
+      <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2">
         {/* Logo */}
-        <div className="flex items-center gap-x-4  justify-between">
+        <div className="flex items-center gap-x-4 md:col-span-2 lg:col-span-1 justify-between">
           <div className="text-3xl  font-bold  text-red-600">
             <Link to="/" className="text-lg font-bold">
               <img
@@ -75,7 +77,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="lg:flex items-center hidden justify-end gap-x-5">
+        <div className="lg:flex items-center col-span-1 hidden justify-end gap-x-5">
           {/* Actions (Theme Toggle & Email Icon) */}
           <div className="flex items-center justify-between py-2 gap-x-5">
             <button
@@ -108,7 +110,7 @@ const Header = () => {
         {/* Burger Menu for repsonsive navbar */}
         <div
           onClick={repsonsiveHandler}
-          className="flex lg:hidden cursor-pointer justify-end items-center"
+          className="flex lg:hidden cursor-pointer col-span-1 justify-end items-center"
         >
           <span className="hover:bg-gray-400 rounded-full p-1 hover:text-white">
             <MdMenu size={32} />
@@ -122,7 +124,14 @@ const Header = () => {
             className="fixed left-0 right-0 top-0
                      bottom-0 bg-black opacity-80 z-10"
           ></div>
-          <RespNavbar />
+          <RespNavbar
+            repsonsiveHandler={repsonsiveHandler}
+            isExpanded={isExpanded}
+            toggleTheme={toggleTheme}
+            darkMode={darkMode}
+            isClick={isClick}
+            setIsClick={setIsClick}
+          />
         </div>
       )}
     </header>
