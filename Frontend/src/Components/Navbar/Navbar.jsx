@@ -29,13 +29,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full mt-20 z-30 transition-all duration-500 ${
+      className={`w-full hidden lg:block  mt-20 z-30 transition-all duration-500 ${
         isScrolled ? "sticky bg-white shadow-md border-gray-800" : "relative bg-transparent"
       }`}
       style={{ top: isScrolled ? "20px" : "0" }}
     >
      
-      <div className="bg-white px-4 py-2  flex justify-center items-center">
+      <div className="bg-white px-4 py-2   flex justify-center items-center">
         <ul className="lg:flex lg:gap-4 p-4 lg:p-0 space-y-4 lg:space-y-0 flex justify-center items-center w-full">
           {NAV_DATA.map((item, index) => (
             <li
