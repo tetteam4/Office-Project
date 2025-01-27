@@ -37,7 +37,7 @@ const Layout = () => {
         <Header />
         <Navbar />
       </div>
-      <div className="">
+      <div className="mt-24 lg:mt-2">
         <Outlet />
       </div>
       <div>
