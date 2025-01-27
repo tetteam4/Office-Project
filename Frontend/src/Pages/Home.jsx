@@ -10,7 +10,7 @@ import BlogCard from '../Components/Blog/BlogCard';
 const HomePage = () => {
  
   return (
-    <div className=" container mx-auto  font-sans ">
+    <div className="font-sans ">
     <Hero_Home /> 
     {/* TET */}
     <Tet_Detials />
