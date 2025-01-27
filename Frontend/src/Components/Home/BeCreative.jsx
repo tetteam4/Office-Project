@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaUsers, FaHeadset, FaRegHandshake, FaRegStar, FaChartLine } from 'react-icons/fa';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Import basic Swiper styles
 import 'swiper/css/pagination'; // Import pagination styles
 import 'swiper/css/navigation'; // Import navigation styles (if using arrows)

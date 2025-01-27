@@ -16,6 +16,8 @@ import {
 import MemberManagement from "./Admin/memberManagement";
 import VerifiedMessages from "./Admin/verifiedMessages";
 import ExpenseManager from "./Admin/expense.jsx";
+import WelcomeDashboard from "./WelcomeDashboard.jsx";
+import UserProfileUpdate from "./UserProfileUpdate.jsx";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -34,8 +36,6 @@ const Dashboard = () => {
         const decodedToken = jwtDecode(token);
         setUser(JSON.stringify(decodedToken));
         // localStorage.setItem("name", JSON.stringify(decodedToken.fullName));
-        console.log(decodedToken);
-        
       } catch (error) {
         console.error("Invalid token, logging out.", error);
         handleLogout();
@@ -47,18 +47,18 @@ const Dashboard = () => {
   const [formData, setFormData] = useState(() => {
     // Use a function to initialize state to handle user being null initially
     return {
-      email: user?.email || "guest",       // Default to "guest" if no email
-      fullName: user?.fullName || "",      // Default to empty string
-      password: "",                        // Empty string for new password
-      repassword: "",                      // Empty string for confirmation password
-      profile: null,                       // Null for profile picture initially
-      role: user?.role || "",              // Default to empty string if no role
-      entryDate: user?.entryDate || "",    // Default to empty string for entry date
-      skills: user?.skills || "",          // Default to empty string for skills
-      contacts: user?.contacts || "",      // Default to empty string for contacts
+      email: user?.email || "guest", // Default to "guest" if no email
+      fullName: user?.fullName || "", // Default to empty string
+      password: "", // Empty string for new password
+      repassword: "", // Empty string for confirmation password
+      profile: null, // Null for profile picture initially
+      role: user?.role || "", // Default to empty string if no role
+      entryDate: user?.entryDate || "", // Default to empty string for entry date
+      skills: user?.skills || "", // Default to empty string for skills
+      contacts: user?.contacts || "", // Default to empty string for contacts
     };
   });
-  
+
   // Update formData dynamically if the user state changes
   useEffect(() => {
     if (user) {
@@ -73,14 +73,14 @@ const Dashboard = () => {
       }));
     }
   }, [user]);
-  
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
   );
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-  const [activeComponent, setActiveComponent] = useState("home");
+  const [activeComponent, setActiveComponent] = useState("welcomeDashborad");
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -167,6 +167,8 @@ const Dashboard = () => {
         return <ExpenseManager />;
       case "messages":
         return <VerifiedMessages />;
+      case "welcomeDashborad":
+        return <WelcomeDashboard />;
       default:
         return <ExpenseManager />;
     }
@@ -283,13 +285,15 @@ const Dashboard = () => {
             onClick={() => setActiveComponent("messages")}
             className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
           >
-            <FaEnvelope  size={20} className="mr-2" /> {isSidebarExpanded && "Messages"}
+            <FaEnvelope size={20} className="mr-2" />{" "}
+            {isSidebarExpanded && "Messages"}
           </li>
           <li
             className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
             onClick={handleLogout}
           >
-            <FaSignOutAlt size={20}  className="mr-2" /> {isSidebarExpanded && "Logout"}
+            <FaSignOutAlt size={20} className="mr-2" />{" "}
+            {isSidebarExpanded && "Logout"}
           </li>
         </ul>
       </aside>
@@ -297,12 +301,12 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="flex-1">
         {/* Navbar */}
-        <nav className="flex justify-between items-center p-4 shadow-md bg-white">
+        <nav className="flex items-center p-4 shadow-md bg-white">
           {/* <h1 className="text-xl font-bold">
            
             wellcome dear <u>{localStorage.getItem("name")}</u>!
           </h1> */}
-          <div className="flex items-center space-x-4">
+          <div className="w-full flex justify-between  items-center space-x-4">
             <button
               onClick={handleDarkModeToggle}
               className="hidden md:block text-2xl"
@@ -314,7 +318,8 @@ const Dashboard = () => {
               )}
             </button>
             <img
-              onClick={() => setProfileOpen(true)}
+              onClick={() => {setProfileOpen(!profileOpen)
+              }}
               src={userImage || "/images/user-placeholder.png"}
               alt="User Avatar"
               className="w-10 h-10 rounded-full border-2 cursor-pointer"
@@ -331,192 +336,9 @@ const Dashboard = () => {
       </div>
 
       {/* Profile Update Modal */}
-      {profileOpen && (
-        <div className="fixed inset-0 overflow-x-scroll flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className=" p-6 bg-white rounded shadow-lg">
-            <form onSubmit={handleUpdate} className="space-y-4">
-              <h2 className="text-xl font-bold text-center">Update Profile</h2>
-              {error && <p className="text-red-500">{error}</p>}
-              <div className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-bold text-gray-700"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="fullName"
-                    className="block text-sm font-bold text-gray-700"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleInputChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                    placeholder="Enter your Full Name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-bold text-gray-700"
-                  >
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                    placeholder="Enter your password"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="repassword"
-                    className="block text-sm font-bold text-gray-700"
-                  >
-                    Re-enter Password
-                  </label>
-                  <input
-                    type="password"
-                    id="repassword"
-                    name="repassword"
-                    value={formData.repassword}
-                    onChange={handleInputChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                    placeholder="Re-enter your password"
-                    required
-                  />
-                </div>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  <div>
-                    <label
-                      htmlFor="role"
-                      className="block text-sm font-bold text-gray-700"
-                    >
-                      Role
-                    </label>
-                    <input
-                      type="text"
-                      id="role"
-                      name="role"
-                      value={formData.role}
-                      onChange={handleInputChange}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                      placeholder="Enter role"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="entryDate"
-                      className="block text-sm font-bold text-gray-700"
-                    >
-                      Entry Date
-                    </label>
-                    <input
-                      type="date"
-                      id="entryDate"
-                      name="entryDate"
-                      value={formData.entryDate}
-                      onChange={handleInputChange}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  <div>
-                    <label
-                      htmlFor="skills"
-                      className="block text-sm font-bold text-gray-700"
-                    >
-                      Skills
-                    </label>
-                    <input
-                      type="text"
-                      id="skills"
-                      name="skills"
-                      value={formData.skills}
-                      onChange={handleInputChange}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                      placeholder="Enter skills"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="contacts"
-                      className="block text-sm font-bold text-gray-700"
-                    >
-                      Contacts
-                    </label>
-                    <input
-                      type="text"
-                      id="contacts"
-                      name="contacts"
-                      value={formData.contacts}
-                      onChange={handleInputChange}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                      placeholder="Enter contacts"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label
-                    htmlFor="profile"
-                    className="block text-sm font-bold text-gray-700"
-                  >
-                    Profile Picture
-                  </label>
-                  <input
-                    type="file"
-                    id="profile"
-                    name="profile"
-                    onChange={handleInputChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline"
-                  />
-                </div>
-                <div className="flex items-center justify-between">
-                  <button
-                    type="submit"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    disabled={loading}
-                  >
-                    {loading ? "Updating..." : "Update"}
-                  </button>
-                  <button
-                    type="button"
-                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    onClick={() => setProfileOpen(false)}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+      {profileOpen&&  
+    (< UserProfileUpdate/>)
+      }
     </div>
   );
 };
