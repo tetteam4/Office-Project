@@ -18,6 +18,8 @@ import VerifiedMessages from "./Admin/verifiedMessages";
 import ExpenseManager from "./Admin/expense.jsx";
 import WelcomeDashboard from "./WelcomeDashboard.jsx";
 import UserProfileUpdate from "./UserProfileUpdate.jsx";
+import AttendanceGraph from "./attendencePage.jsx";
+import { ClipboardCheck } from "lucide-react";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -167,6 +169,8 @@ const Dashboard = () => {
         return <ExpenseManager />;
       case "messages":
         return <VerifiedMessages />;
+      case "attendancePage":
+        return <AttendanceGraph />;
       case "welcomeDashborad":
         return <WelcomeDashboard />;
       default:
@@ -183,7 +187,7 @@ const Dashboard = () => {
       {/* Mobile Sidebar Overlay */}
       {isMobileSidebarOpen && (
         <div className="fixed inset-0 z-50 flex bg-black bg-opacity-50 md:hidden">
-          <div className="w-64 bg-blue-600 text-white p-6">
+          <div className="ml-auto w-64 bg-blue-600 text-white p-6">
             <h2 className="text-2xl font-bold mb-6">Dashboard Menu</h2>
             <button
               onClick={handleDarkModeToggle}
@@ -204,7 +208,7 @@ const Dashboard = () => {
                 }}
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
               >
-                <FaUserFriends className="mr-2" /> Member Management
+                <FaUserFriends size={20} className="mr-2" /> Member Management
               </li>
               <li
                 onClick={() => {
@@ -213,7 +217,7 @@ const Dashboard = () => {
                 }}
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
               >
-                <GiMoneyStack className="mr-2" /> Expense Management
+                <GiMoneyStack size={20} className="mr-2" /> Expense Management
               </li>
               <li
                 onClick={() => {
@@ -222,9 +226,8 @@ const Dashboard = () => {
                 }}
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
               >
-                <GiMoneyStack className="mr-2" /> Income Management
+                <GiMoneyStack size={20} className="mr-2" /> Income Management
               </li>
-
               <li
                 onClick={() => {
                   setActiveComponent("messages");
@@ -232,7 +235,16 @@ const Dashboard = () => {
                 }}
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
               >
-                <FaEnvelope size={24} className="mr-2" /> Messages
+                <FaEnvelope size={18} className="mr-2" /> Messages
+              </li>
+              <li
+                onClick={() => {
+                  setActiveComponent("attendancePage");
+                  setIsMobileSidebarOpen(false);
+                }}
+                className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
+              >
+                <ClipboardCheck size={20} className="mr-2" /> Attendance
               </li>
               <li
                 className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
@@ -289,6 +301,13 @@ const Dashboard = () => {
             {isSidebarExpanded && "Messages"}
           </li>
           <li
+            onClick={() => setActiveComponent("attendancePage")}
+            className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
+          >
+            <ClipboardCheck size={20} className="mr-2" />
+            {isSidebarExpanded && "Attendance"}
+          </li>
+          <li
             className="p-2 hover:bg-blue-500 rounded cursor-pointer flex items-center"
             onClick={handleLogout}
           >
@@ -301,12 +320,18 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="flex-1">
         {/* Navbar */}
-        <nav className="flex items-center p-4 shadow-md bg-white">
+        <nav className="flex items-center  p-4 shadow-md bg-white">
           {/* <h1 className="text-xl font-bold">
            
             wellcome dear <u>{localStorage.getItem("name")}</u>!
           </h1> */}
           <div className="w-full flex justify-between  items-center space-x-4">
+            <button
+              onClick={handleMobileSidebarToggle}
+              className="md:hidden text-2xl"
+            >
+              <FaBars />
+            </button>
             <button
               onClick={handleDarkModeToggle}
               className="hidden md:block text-2xl"
@@ -318,27 +343,20 @@ const Dashboard = () => {
               )}
             </button>
             <img
-              onClick={() => {setProfileOpen(!profileOpen)
+              onClick={() => {
+                setProfileOpen(!profileOpen);
               }}
               src={userImage || "/images/user-placeholder.png"}
               alt="User Avatar"
               className="w-10 h-10 rounded-full border-2 cursor-pointer"
             />
-            <button
-              onClick={handleMobileSidebarToggle}
-              className="md:hidden text-2xl"
-            >
-              <FaBars />
-            </button>
           </div>
         </nav>
         <div className="p-8">{renderContent()}</div>
       </div>
 
       {/* Profile Update Modal */}
-      {profileOpen&&  
-    (< UserProfileUpdate/>)
-      }
+      {profileOpen && <UserProfileUpdate />}
     </div>
   );
 };

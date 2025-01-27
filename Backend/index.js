@@ -32,6 +32,7 @@ app.use('/member', memberRoute); // Base route for members
 app.use('/message',massageRouter)
 app.use('/expense',expenseRouter)
 app.use('/income',IncomesRouter)
+app.use('/attendance',IncomesRouter)
 
 
 

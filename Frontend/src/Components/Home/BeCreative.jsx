@@ -1,14 +1,7 @@
 import React from 'react';
 import { FaUsers, FaHeadset, FaRegHandshake, FaRegStar, FaChartLine } from 'react-icons/fa';
-<<<<<<< HEAD
-// import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Import basic Swiper styles
-import 'swiper/css/pagination'; // Import pagination styles
-import 'swiper/css/navigation'; // Import navigation styles (if using arrows)
-=======
 
 import Slider from './Slider';
->>>>>>> b4446a4de5ea850e021c0c9b8deb1cbfbed0e4f4
 
 const BeCreativeAndDistinct = () => {
   return (

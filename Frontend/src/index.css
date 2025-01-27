@@ -20,3 +20,24 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background-color: #f3f4f6; /* Track color */
 }
+/* custom-styles.css */
+.react-calendar-heatmap .color-empty {
+  fill: #ebedf0; /* Gray for no attendance */
+}
+.react-calendar-heatmap .color-present {
+  fill: #4caf50; /* Green for present */
+}
+.react-calendar-heatmap .color-absent {
+  fill: #f44336; /* Red for absent */
+}
+.react-calendar-heatmap .color-empty {
+  fill: #ebedf0;
+}
+.react-calendar-heatmap .color-present {
+  fill: #4caf50;
+}
+.react-calendar-heatmap rect {
+  width: 10px;
+  height: 10px;
+  rx: 2px; /* Rounded corners */
+}
