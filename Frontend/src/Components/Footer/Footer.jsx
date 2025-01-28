@@ -34,7 +34,7 @@ const Footer = () => {
       <div className="w-full mx-auto container mb-5  flex justify-between items-center ">
         <div className="text-md">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="" className="w-[200px]" />
+            <img src={logo} alt="" className="w-[200px] mix-blend-multiply" />
           </div>
           <div className="flex items-center gap-x-7">
             <p>Telephone : +93772387935</p>
