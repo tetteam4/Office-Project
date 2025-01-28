@@ -19,26 +19,11 @@ const WelcomeDashboard = ({ userName }) => {
         >
           <Smile size={48} className="text-yellow-400 mx-auto" />
           <h1 className="text-3xl font-bold text-gray-800 mt-4">
-            خوش آمدید، {userName}!
+            Welcome, {userName}!
           </h1>
           <p className="text-gray-600 mt-2">
-            ما خوشحالیم که شما به حساب کاربری خود وارد شده‌اید.
+            We are glad to have you logged into your account.
           </p>
-        </motion.div>
-
-        {/* Buttons */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-6"
-        >
-          <button className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-            مشاهده داشبورد
-          </button>
-          <button className="w-full mt-4 bg-gray-100 text-gray-700 font-medium py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-            ویرایش پروفایل
-          </button>
         </motion.div>
       </motion.div>
     </div>
