@@ -1,20 +1,24 @@
-import Attendance from '../models/attendence';
+import Attendance from '../models/attendence.js';
 
 /**
  * Create a new Attendance
  */
 export const createAttendance = async (req, res) => {
+  console.log(req);
+  
   try {
-    const { for: purpose, amount, person } = req.body;
+    const { name, status } = req.body;
+    console.log(name, status);
+    
 
-    if (!purpose || !amount || !person) {
-      return res.status(400).json({ message: 'All fields are required.' });
+    if (!name || !status) {
+      return res.status(400).json({ message: 'Name and status are required.' });
     }
 
     const newAttendance = await Attendance.create({
-      for: purpose,
-      amount,
-      person,
+      name,
+      status,
+      date: new Date(),
     });
 
     res.status(201).json({
@@ -22,12 +26,14 @@ export const createAttendance = async (req, res) => {
       Attendance: newAttendance,
     });
   } catch (error) {
-    res.status(500).json({ message: 'Error creating Attendance.', error });
+    console.error('Error creating attendance:', error); // Log stack trace
+    res.status(500).json({ message: 'Error creating attendance.', error });
   }
 };
 
+
 /**
- * Get all Attendances
+ Get all Attendances
  */
 export const getAllAttendances = async (req, res) => {
   try {

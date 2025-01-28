@@ -7,8 +7,11 @@ Attendance.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false,
-    }, date: {
+    }, status: {
         type: DataTypes.STRING,
+        allowNull: false,
+    }, date: {
+        type: DataTypes.DATE,
         allowNull: false,
     }
 }, {

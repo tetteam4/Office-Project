@@ -6,6 +6,7 @@ import cors from 'cors'
 import massageRouter from './routes/massageRoute.js';
 import expenseRouter from './routes/expenseRout.js';
 import IncomesRouter from './routes/IncomesRoute.js';
+import AttendanceRouter from './routes/attendanceRout.js';
 
 const app = express();
 const PORT = process.env.PORT || 9000;
@@ -32,7 +33,7 @@ app.use('/member', memberRoute); // Base route for members
 app.use('/message',massageRouter)
 app.use('/expense',expenseRouter)
 app.use('/income',IncomesRouter)
-app.use('/attendance',IncomesRouter)
+app.use('/attendance',AttendanceRouter)
 
 
 

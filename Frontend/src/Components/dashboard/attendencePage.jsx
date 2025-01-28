@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "../../../src/index.css";
+import AttendanceMarking from "./Admin/Attendance";
 
 const AttendanceGraph = () => {
   const [data, setData] = useState([
@@ -19,7 +20,7 @@ const AttendanceGraph = () => {
     { date: "2025-01-13", attendance: "present" },
     { date: "2025-01-27", attendance: "present" },
   ]);
-
+  const [isOpen, setIsOpen]=useState(false);
   const today = new Date();
 
   // Find the earliest date in the data
@@ -29,7 +30,10 @@ const AttendanceGraph = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6 text-center">Attendance Overview</h2>
+      <button onClick={()=>{setIsOpen(!isOpen)}}>Attendance Marking</button>
+      {isOpen&&(
+       < AttendanceMarking/>
+      )}<h2 className="text-2xl font-bold mb-6 text-center">Attendance Overview</h2>
       <div className="overflow-x-auto border border-gray-300 rounded-lg p-4">
         <div className="min-w-[1200px] mx-auto">
           <CalendarHeatmap
