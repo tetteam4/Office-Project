@@ -32,7 +32,7 @@ const Layout = () => {
     });
   };
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className=" ">
         <Header />
         <Navbar />
@@ -47,7 +47,7 @@ const Layout = () => {
         <div className="fixed bottom-10 right-10">
           <button
             onClick={scrollToTop}
-            className="bg-[#02DB81] hover:bg-[#2d9469] text-white dark:bg-gray-100 dark:text-slate-900 p-3 rounded-full shadow-lg  transition duration-300"
+            className="bg-[#02DB81] hover:bg-[#2d9469]  p-3 rounded-full shadow-lg  transition duration-300"
           >
             <IoMdArrowRoundUp size={24} />
           </button>

@@ -42,7 +42,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white  fixed z-40 p-4 top-0 left-0 right-0">
+    <header className="bg-[#FFFFFF]  fixed z-40 p-4 top-0 left-0 right-0">
       <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2">
         {/* Logo */}
         <div className="flex items-center gap-x-4 md:col-span-2 lg:col-span-1 justify-between">

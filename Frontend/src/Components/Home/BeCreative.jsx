@@ -5,7 +5,7 @@ import Slider from './Slider';
 
 const BeCreativeAndDistinct = () => {
   return (
-    <div className="text-center py-12 px-6 bg-gray-50">
+    <div className="text-center py-12 px-6">
       <h1 className="text-4xl font-bold text-gray-800 mb-6">Be Creative and Distinct</h1>
       <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
         At the heart of our company, we believe in the power of creativity and distinction. We strive to offer solutions
@@ -37,7 +37,7 @@ const BeCreativeAndDistinct = () => {
 </div>
 
 
-      <div className="max-w-5xl mx-auto">
+      <div className="w-full relative mx-auto">
         <Slider />
       </div>
     </div>
