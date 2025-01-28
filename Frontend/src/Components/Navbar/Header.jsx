@@ -131,6 +131,7 @@ const Header = () => {
             darkMode={darkMode}
             isClick={isClick}
             setIsClick={setIsClick}
+            isOpne={isOpne}
           />
         </div>
       )}
