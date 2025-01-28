@@ -32,16 +32,16 @@ export default {
       xl: "1280px", // Desktop
       "2xl": "1536px", // Large screens
     },
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: "1rem",
-        sm: "2rem",
-        lg: "4rem",
-        xl: "4rem",
-        "2xl": "2rem",
-      },
-    },
+    // container: {
+    //   center: true,
+    //   padding: {
+    //     DEFAULT: "1rem",
+    //     sm: "2rem",
+    //     lg: "4rem",
+    //     xl: "4rem",
+    //     "2xl": "2rem",
+    //   },
+    // },
   },
   plugins: [],
 };

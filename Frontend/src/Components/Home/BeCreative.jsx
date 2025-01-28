@@ -37,7 +37,7 @@ const BeCreativeAndDistinct = () => {
 </div>
 
 
-      <div className="max-w-4xl h-[400px] border mx-auto">
+      <div className="max-w-5xl mx-auto">
         <Slider />
       </div>
     </div>

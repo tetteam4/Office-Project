@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { NAV_DATA } from "./navdata";
 import MegaMenu from "./MegaMenu";
 import Header from "./Header";
+import { IoMdArrowDropdown } from "react-icons/io";
+
 
 const Navbar = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -55,11 +57,11 @@ const Navbar = () => {
                 aria-expanded={delayedItem === index}
               >
                 {item.name}
-                {item.icon && (
+                
                   <span className="ml-1 transform group-hover:rotate-180 transition-transform duration-300">
-                    {item.icon}
+                     {(index === 1 || index === 3) && <IoMdArrowDropdown size={28} />}
                   </span>
-                )}
+              
               </Link>
 
               {delayedItem === index && item.subCategories && (
