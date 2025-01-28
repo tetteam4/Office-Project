@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
-import axios from "axios";
+import axios from "axios"
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",

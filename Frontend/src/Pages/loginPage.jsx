@@ -1,5 +1,6 @@
 // src/Components/LoginPage.jsx
-import axios from "axios";
+
+import axios from "axios"
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiMail, FiUserMinus } from "react-icons/fi";

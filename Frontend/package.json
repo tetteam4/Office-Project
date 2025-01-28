@@ -16,6 +16,7 @@
     "@mui/material": "^6.1.6",
     "@mui/styles": "^6.1.6",
     "@shadcn/ui": "^0.0.4",
+    "axios": "^1.7.9",
     "chart.js": "^4.4.7",
     "crypto-js": "^4.2.0",
     "cryptojs": "^2.5.3",
