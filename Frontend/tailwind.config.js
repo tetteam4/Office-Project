@@ -1,23 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-   darkMode: "class",
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   safelist: [
-    'grid-cols-1',
-    'grid-cols-2',
-    'grid-cols-3',
-    'grid-cols-4',
-    'grid-cols-5',
+    "grid-cols-1",
+    "grid-cols-2",
+    "grid-cols-3",
+    "grid-cols-4",
+    "grid-cols-5",
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        primary: "#FFFFFF",
+        secondary: "#F0F4FF",
       },
       scrollbar: {
         width: "5px",
@@ -30,7 +26,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Roboto', 'sans-serif','Poppins'], // Using Roboto as the default sans-serif font
+        sans: ["Roboto", "sans-serif", "Poppins"], // Using Roboto as the default sans-serif font
       },
     },
     screens: {

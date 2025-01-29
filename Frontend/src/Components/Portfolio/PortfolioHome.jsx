@@ -1,7 +1,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import img from "../../assets/website.png";
+import img1 from "../../assets/mobile.png";
+import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIos } from "react-icons/md";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -12,8 +15,8 @@ const PortfolioHome = () => {
       id: 1,
       category: "Web Development",
       name: "E-commerce Platform",
-      laptopImage: "https://via.placeholder.com/600x400?text=Laptop+Preview",
-      mobileImage: "https://via.placeholder.com/200x400?text=Mobile+Preview",
+      laptopImage: img,
+      mobileImage: img1,
     },
     {
       id: 2,
@@ -35,12 +38,19 @@ const PortfolioHome = () => {
     <div className="max-w-7xl mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold text-center mb-8">Our Works</h2>
       <Swiper
-        modules={[ Pagination]}
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        
-        className="h-auto"
+        modules={[Navigation, Pagination, Autoplay]}
+        pagination={{
+          el: ".custom-pagination",
+          clickable: true,
+        }}
+        navigation={{
+          nextEl: ".button-next-slide",
+          prevEl: ".button-prev-slide",
+        }}
+        autoplay={{ delay: 3000 }}
+        loop
+        grabCursor={true}
+        className="h-auto border"
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id}>
@@ -53,27 +63,21 @@ const PortfolioHome = () => {
               {/* Device Previews */}
               <div className="flex flex-col md:flex-row items-center gap-8">
                 {/* Laptop Preview */}
-                <div className="relative border-2 border-gray-200 rounded-lg shadow-lg w-[400px] h-[300px] md:w-[600px] md:h-[400px]">
+                <div className="relative border-2 border-gray-200 p-1 rounded-lg shadow-lg w-[400px] h-[300px] md:w-[650px] md:h-[400px]">
                   <img
                     src={project.laptopImage}
                     alt={`${project.name} Laptop`}
-                    className="rounded-lg w-full h-full object-cover"
+                    className="w-full h-full"
                   />
-                  <span className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm px-2 py-1 rounded-md">
-                    Laptop View
-                  </span>
                 </div>
 
                 {/* Mobile Preview */}
-                <div className="relative border-2 border-gray-200 rounded-lg shadow-lg w-[150px] h-[300px] md:w-[200px] md:h-[400px]">
+                <div className="relative border-2 p-1 border-gray-200 rounded-lg shadow-lg w-[150px] h-[300px] md:w-[220px] md:h-[400px]">
                   <img
                     src={project.mobileImage}
                     alt={`${project.name} Mobile`}
-                    className="rounded-lg w-full h-full object-cover"
+                    className="w-full h-full"
                   />
-                  <span className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm px-2 py-1 rounded-md">
-                    Mobile View
-                  </span>
                 </div>
               </div>
 
@@ -83,6 +87,17 @@ const PortfolioHome = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Custom Pagination */}
+      <div className="custom-pagination flex justify-center gap-2 mt-4"></div>
+
+      {/* Custom Navigation Buttons */}
+      <div className="button-next-slide flex items-center justify-center w-10 h-10 rounded-full bg-gray-700 text-white absolute right-10 bottom-10 z-20 cursor-pointer hover:bg-gray-900">
+        <MdArrowForwardIos />
+      </div>
+      <div className="button-prev-slide flex items-center justify-center w-10 h-10 rounded-full bg-gray-700 text-white absolute left-10 bottom-10 z-20 cursor-pointer hover:bg-gray-900">
+        <MdArrowBackIos />
+      </div>
     </div>
   );
 };
