@@ -5,6 +5,7 @@ import Tet_Detials from '../Components/Home/Tet_Detials';
 import BeCreative from '../Components/Home/BeCreative';
 import BlogCard from '../Components/Blog/BlogCard';
 import PortfolioHome from '../Components/Portfolio/PortfolioHome';
+import Port_home from '../Components/Portfolio/Port_home';
 
 
 
@@ -18,6 +19,7 @@ const HomePage = () => {
     {/* Be Creative section */}
     <BeCreative />
    <PortfolioHome />
+   
     </div>
   );
 };

@@ -110,20 +110,20 @@ function RespNavbar({
                   {navItem.subCategories && expandedMenus[index] && (
                     <ul
                       id={`menu-${index}`}
-                      className="ml-4 mt-2 space-y-2"
+                      className=" mt-2 space-y-3 "
                       role="list"
                     >
                       {navItem.subCategories.map((category, catIndex) => (
-                        <li key={catIndex}>
+                        <li key={catIndex} className="border-t border-gray-500 ">
                           <div
-                            className="flex items-center justify-between cursor-pointer text-lg"
+                            className="flex items-center justify-between cursor-pointer text-md"
                             onClick={() => toggleCategory(index, catIndex)}
                             aria-expanded={expandedCategories[`${index}-${catIndex}`]}
                             aria-controls={`category-${index}-${catIndex}`}
                           >
                             <span className="flex items-center">
-                              {category.icon}
-                              <span className="ml-2">{category.category}</span>
+                             
+                              <span className="">{category.category}</span>
                             </span>
                             {expandedCategories[`${index}-${catIndex}`] ? (
                               <IoMdRemove size={18} />
@@ -134,11 +134,11 @@ function RespNavbar({
                           {expandedCategories[`${index}-${catIndex}`] && (
                             <ul
                               id={`category-${index}-${catIndex}`}
-                              className="ml-6 mt-1 space-y-1"
+                              className="ml-5 mt-2 space-y-2"
                               role="list"
                             >
                               {category.items.map((item, itemIndex) => (
-                                <li key={itemIndex}>
+                                <li key={itemIndex} className="border-t border-gray-500 py-1">
                                   <Link
                                     to={item.path}
                                     className="block text-gray-300 hover:text-white"

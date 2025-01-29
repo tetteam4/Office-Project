@@ -41,3 +41,13 @@ body::-webkit-scrollbar-track {
   height: 10px;
   rx: 2px; /* Rounded corners */
 }
+
+
+
+.custom-pagination .swiper-pagination-bullet {
+  @apply w-4 h-4 bg-gray-400 rounded-full transition-all duration-300;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  @apply w-6 h-6 bg-yellow-400 scale-110;
+}
