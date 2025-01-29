@@ -5,12 +5,13 @@ import {
   getAttendanceById,
   updateAttendance,
   deleteAttendance,
+  getTodayAttendance,
 } from '../Controllers/AttendanceController.js';
 
 const AttendanceRouter = express.Router();
 
 AttendanceRouter.post('/', createAttendance);
-AttendanceRouter.get('/', getAllAttendances);
+AttendanceRouter.get('/todayRec', getTodayAttendance);
 AttendanceRouter.get('/:id', getAttendanceById);
 AttendanceRouter.put('/:id', updateAttendance);
 AttendanceRouter.delete('/:id', deleteAttendance);

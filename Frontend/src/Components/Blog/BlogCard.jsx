@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../assets/img.jpg";
+// import img from "../../assets/img.jpg";
 const BlogCard = () => {
   return (
     <div className="bg-gray-300 flex flex-col justify-between rounded-lg px-6 py-8 h-[550px] w-[400px] border ">

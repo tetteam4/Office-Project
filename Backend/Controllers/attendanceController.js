@@ -1,5 +1,36 @@
 import Attendance from '../models/attendence.js';
 
+//get todays records
+export const getTodayAttendance = async (req, res) => {
+  try {
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+
+    // Fetch records where the date field matches today's date
+    const todayRecords = await Attendance.findAll({
+      where: {
+        date: today,
+      },
+    });
+
+    if (todayRecords.length === 0) {
+      return res.status(404).json({
+        message: 'No attendance records found for today.',
+      });
+    }
+
+    res.status(200).json({
+      message: 'Attendance records fetched successfully.',
+      records: todayRecords,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: 'Error fetching today\'s attendance records.',
+      error,
+    });
+  }
+};
+
 /**
  * Create a new Attendance
  */
