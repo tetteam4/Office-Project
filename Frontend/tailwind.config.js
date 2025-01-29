@@ -28,6 +28,18 @@ export default {
       fontFamily: {
         sans: ["Roboto", "sans-serif", "Poppins"], // Using Roboto as the default sans-serif font
       },
+      keyframes: {
+        borderMove: {
+          "0%": { "clip-path": "polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%)" },
+          "25%": { "clip-path": "polygon(0% 0%, 100% 0%, 0% 0%, 0% 0%)" },
+          "50%": { "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 0%)" },
+          "75%": { "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
+          "100%": { "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
+        },
+      },
+      animation: {
+        border: "borderMove 0.5s ease-in-out forwards",
+      },
     },
     screens: {
       sm: "640px", // Mobile

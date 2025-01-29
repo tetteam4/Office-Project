@@ -6,6 +6,7 @@ import BeCreative from '../Components/Home/BeCreative';
 import BlogCard from '../Components/Blog/BlogCard';
 import PortfolioHome from '../Components/Portfolio/PortfolioHome';
 import Port_home from '../Components/Portfolio/Port_home';
+import RecentlyHomeBlog from '../Components/Home/RecentlyHomeBlog';
 
 
 
@@ -19,7 +20,7 @@ const HomePage = () => {
     {/* Be Creative section */}
     <BeCreative />
    <PortfolioHome />
-   
+   <RecentlyHomeBlog />
     </div>
   );
 };
