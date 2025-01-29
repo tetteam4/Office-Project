@@ -30,7 +30,7 @@ const AttendanceGraph = () => {
 
   return (
     <div className="p-6">
-      <button onClick={()=>{setIsOpen(!isOpen)}}>Attendance Marking</button>
+      <button className="bg-blue-700 rounded-lg p-4 text-white" onClick={()=>{setIsOpen(!isOpen)}}>Attendance Marking</button>
       {isOpen&&(
        < AttendanceMarking/>
       )}<h2 className="text-2xl font-bold mb-6 text-center">Attendance Overview</h2>
