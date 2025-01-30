@@ -25,7 +25,7 @@ const MegaMenu = ({ subCategories = [], isVisible }) => {
       }}
     >
       <div
-        className={`grid ${gridColsClass} gap-y-10 mx-40 gap-x-6 place-items-center items-start mt-10 pb-10`}
+        className={`grid ${gridColsClass} gap-y-10 mx-40 gap-x-6 place-items-center items-start  pb-10`}
       >
         {Array.isArray(subCategories) &&
           subCategories.map((category, index) => (
