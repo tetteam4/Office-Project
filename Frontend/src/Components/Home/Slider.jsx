@@ -75,12 +75,13 @@ const CustomerSlider = () => {
         ))}
 
         {/* Navigation Buttons */}
-        {/* Navigation Buttons */}
-        <div className="button-next-slide group-hover:flex hidden w-[40px] h-[40px] items-center justify-center rounded-full absolute top-1/2 -translate-y-1/2 -left-10 bottom-10 z-20 bg-white shadow-md">
-          <MdArrowForwardIos />
+        
+        <div className="button-next-slide group-hover:flex hidden w-[40px] h-[40px] items-center justify-center rounded-full absolute top-1/2 -translate-y-1/2 left-10 bottom-10 z-20 bg-white shadow-md">
+          
+          <MdArrowBackIos />
         </div>
         <div className="button-prev-slide group-hover:flex hidden w-[40px] h-[40px] items-center justify-center rounded-full absolute top-1/2 -translate-y-1/2 right-1 z-20 bottom-10 bg-white shadow-md">
-          <MdArrowBackIos />
+        <MdArrowForwardIos />
         </div>
       </Swiper>
     </div>

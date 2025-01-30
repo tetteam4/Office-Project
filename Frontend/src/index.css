@@ -51,3 +51,7 @@ body::-webkit-scrollbar-track {
 .custom-pagination .swiper-pagination-bullet-active {
   @apply w-6 h-1.5 bg-[#02DB81] scale-110;
 }
+
+
+
+

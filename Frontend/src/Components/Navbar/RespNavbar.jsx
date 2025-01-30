@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.jpg";
 import { NAV_DATA } from "./navdata";
 import { Link } from "react-router-dom";
-import { FiSun, FiMoon } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
-import { LuLogIn } from "react-icons/lu";
+import { MdWbSunny, MdNightlight } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 
 function RespNavbar({
@@ -57,23 +56,6 @@ function RespNavbar({
           aria-hidden={!isOpne}
           className={`fixed top-[75px] left-0 h-[100vh] bottom-0 z-20 bg-white text-black shadow-md transform transition-transform duration-300 ease-in-out w-[80%] sm:w-[75%] lg:w-[390px]`}
         >
-          {/* Header */}
-          {/* <div className="absolute top-0 left-0 right-0 z-20 bg-white flex justify-between p-3 items-center">
-            <div>
-              <img
-                src={logo}
-                alt="Logo"
-                className="mix-blend-multiply w-[150px]"
-              />
-            </div>
-            <a
-              href="mailto:user@example.com"
-              className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 transition-all duration-300"
-            >
-              <MdEmail className="w-6 h-6" />
-            </a>
-          </div> */}
-
           {/* Scrollable Content */}
           <div className="h-[calc(100vh-70px-70px)] overflow-y-auto  pb-16">
             {/* Search Bar */}
@@ -168,16 +150,20 @@ function RespNavbar({
 
           {/* Footer */}
           <div className="absolute  z-20 flex border bg-white p-3 items-center w-full justify-between px-5">
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-center w-10 h-10 bg-indigo-500 dark:bg-yellow-400 text-white dark:text-black rounded-full shadow-md transition-all duration-300 hover:scale-105"
-            >
-              {darkMode ? (
-                <FiMoon className="w-6 h-6" />
-              ) : (
-                <FiSun className="w-6 h-6" />
-              )}
-            </button>
+            <label className="inline-flex items-center relative">
+              <input className="peer hidden" id="toggle" type="checkbox" />
+              <div
+                className="relative w-[110px] h-[40px] bg-white peer-checked:bg-zinc-500 border rounded-full 
+                     after:absolute after:content-[''] after:w-[35px] after:h-[35px] after:bg-gradient-to-r from-orange-500 to-yellow-400 
+                     peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[2px] after:left-[4px] 
+                     active:after:w-[35px] peer-checked:after:left-[102px] peer-checked:after:translate-x-[-100%] 
+                     shadow-sm duration-300 after:duration-300 after:shadow-md"
+              ></div>
+              {/* Sun Icon */}
+              <MdWbSunny className="fill-white peer-checked:opacity-60 absolute w-5 h-5 left-[13px]" />
+              {/* Moon Icon */}
+              <MdNightlight className="fill-black opacity-60 peer-checked:opacity-70 peer-checked:fill-white absolute w-5 h-5 right-[13px]" />
+            </label>
             <a
               href="mailto:user@example.com"
               className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 transition-all duration-300"

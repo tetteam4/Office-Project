@@ -10,6 +10,7 @@ import img2 from "../../assets/mobile2.jpg";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Button from "../../Utilities/Button";
 
 const PortfolioHome = () => {
   const projects = [
@@ -32,7 +33,7 @@ const PortfolioHome = () => {
       category: "Software Solution",
       name: "CRM System",
       laptopImage: lap3,
-      mobileImage:img3,
+      mobileImage: img3,
     },
   ];
 
@@ -55,7 +56,7 @@ const PortfolioHome = () => {
         grabCursor={true}
         onSlideChange={(swiper) =>
           setActiveProject(projects[swiper.realIndex].name)
-        } 
+        }
         className="w-full"
       >
         {projects.map((project) => (
@@ -95,10 +96,10 @@ const PortfolioHome = () => {
 
         {/* View More Button */}
         <div className="px-4 py-2  flex items-center justify-end">
-          <button className="relative py-2.5 px-5 rounded-full text-white transition-transform duration-300  bg-[#003871] hover:scale-105  border-transparent group">
-            <span className="absolute inset-0 w-full h-full rounded-full border-2  border-[#02DB81] animate-border hidden group-hover:block"></span>
-            <span className="relative z-10">View More</span>
-          </button>
+          <Button
+            text="View More "
+            onClick={() => console.log("Button Clicked!")}
+          />
         </div>
       </div>
     </div>

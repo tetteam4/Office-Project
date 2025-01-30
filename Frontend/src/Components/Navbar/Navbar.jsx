@@ -70,8 +70,8 @@ const Navbar = () => {
                   ></div>
                   <div
                     className={`${
-                      isScrolled ? "fixed top-[50px]" : "absolute top-12"
-                    } left-0 w-full  z-20`}
+                      isScrolled ? "fixed top-[50px] " : "absolute top-12"
+                    } left-0 w-full  z-40`}
                   >
                     <MegaMenu subCategories={item.subCategories} isVisible={true} />
                   </div>
