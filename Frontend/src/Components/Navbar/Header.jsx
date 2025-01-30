@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 import { FiSun, FiMoon } from "react-icons/fi"; // Icons for light/dark mode
 import { MdEmail, MdMenu, MdClose } from "react-icons/md"; // Email icon
-import { Menu } from "@mui/material";
+import { MdWbSunny, MdNightlight } from "react-icons/md";
 
 const Header = () => {
   const [isClick, setIsClick] = useState(false);
@@ -86,10 +86,7 @@ const Header = () => {
         </div>
         {/* login in responsive */}
         <div className="flex justify-end lg:hidden">
-          <Link
-            to="/signup"
-            className="flex items-center bg-gray-50   p-1"
-          >
+          <Link to="/signup" className="flex items-center bg-gray-50   p-1">
             <span className="px-2 text-sm font-semibold">Login</span>
             <span>
               <LuLogIn className="text-gray-700" size={20} />
@@ -98,17 +95,21 @@ const Header = () => {
         </div>
         <div className="lg:flex items-center col-span-1 hidden justify-end gap-x-5">
           {/* Actions (Theme Toggle & Email Icon) */}
-          <div className="flex items-center justify-between py-2 gap-x-5">
-            <button
-              onClick={toggleTheme}
-              className="flex items-center justify-center w-10 h-10 bg-indigo-500 dark:bg-yellow-400 text-white dark:text-black rounded-full shadow-md transition-all duration-300 hover:scale-105"
-            >
-              {darkMode ? (
-                <FiMoon className="w-6 h-6" />
-              ) : (
-                <FiSun className="w-6 h-6" />
-              )}
-            </button>
+          <div className="flex items-center justify-between py-1.5 gap-x-5">
+          <label className="inline-flex items-center relative">
+        <input className="peer hidden" id="toggle" type="checkbox" />
+        <div className="relative w-[110px] h-[40px] bg-white peer-checked:bg-zinc-500 border rounded-full 
+          after:absolute after:content-[''] after:w-[35px] after:h-[35px] after:bg-gradient-to-r from-orange-500 to-yellow-400 
+          peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[2px] after:left-[4px] 
+          active:after:w-[35px] peer-checked:after:left-[102px] peer-checked:after:translate-x-[-100%] 
+          shadow-sm duration-300 after:duration-300 after:shadow-md">
+        </div>
+        {/* Sun Icon */}
+        <MdWbSunny className="fill-white peer-checked:opacity-60 absolute w-5 h-5 left-[13px]" />
+        {/* Moon Icon */}
+        <MdNightlight className="fill-black opacity-60 peer-checked:opacity-70 peer-checked:fill-white absolute w-5 h-5 right-[13px]" />
+      </label>
+
             <a
               href="mailto:user@example.com"
               className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 transition-all duration-300"
