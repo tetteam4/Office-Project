@@ -55,10 +55,10 @@ function RespNavbar({
           transition={{ duration: 0.1, ease: "easeInOut" }}
           role="dialog"
           aria-hidden={!isOpne}
-          className={`fixed top-0 left-0 h-[100vh] bottom-0 z-20 bg-gray-600 text-white shadow-md transform transition-transform duration-300 ease-in-out w-[80%] sm:w-[75%] lg:w-[390px]`}
+          className={`fixed top-[75px] left-0 h-[100vh] bottom-0 z-20 bg-white text-black shadow-md transform transition-transform duration-300 ease-in-out w-[80%] sm:w-[75%] lg:w-[390px]`}
         >
           {/* Header */}
-          <div className="absolute top-0 left-0 right-0 z-20 bg-white flex justify-between p-3 items-center">
+          {/* <div className="absolute top-0 left-0 right-0 z-20 bg-white flex justify-between p-3 items-center">
             <div>
               <img
                 src={logo}
@@ -72,16 +72,16 @@ function RespNavbar({
             >
               <MdEmail className="w-6 h-6" />
             </a>
-          </div>
+          </div> */}
 
           {/* Scrollable Content */}
-          <div className="mt-[80px] h-[calc(100vh-70px-70px)] overflow-y-scroll  pb-16">
+          <div className="h-[calc(100vh-70px-70px)] overflow-y-auto  pb-16">
             {/* Search Bar */}
             <form className="flex-1 px-5 mt-5 relative">
               <input
                 type="text"
                 placeholder="Search ..."
-                className="w-full py-2 border text-gray-600 px-10 border-gray-300 bg-gray-200 rounded-lg focus:outline-none"
+                className="w-full py-2 border text-gray-600 px-10 border-gray-100 bg-gray-200 rounded-lg focus:outline-none"
               />
               <span className="absolute top-3 text-xl text-gray-500 right-8">
                 <IoSearch />
@@ -91,7 +91,7 @@ function RespNavbar({
             {/* Navigation Links */}
             <ul className="flex flex-col space-y-2 p-4">
               {NAV_DATA.map((navItem, index) => (
-                <li key={index} className="border-b border-gray-500 pb-2">
+                <li key={index} className="border-b border-gray-300 pb-2">
                   <div
                     className="flex items-center justify-between cursor-pointer"
                     onClick={() => toggleMenu(index)}
@@ -114,15 +114,19 @@ function RespNavbar({
                       role="list"
                     >
                       {navItem.subCategories.map((category, catIndex) => (
-                        <li key={catIndex} className="border-t border-gray-500 ">
+                        <li
+                          key={catIndex}
+                          className="border-t border-gray-300 "
+                        >
                           <div
                             className="flex items-center justify-between cursor-pointer text-md"
                             onClick={() => toggleCategory(index, catIndex)}
-                            aria-expanded={expandedCategories[`${index}-${catIndex}`]}
+                            aria-expanded={
+                              expandedCategories[`${index}-${catIndex}`]
+                            }
                             aria-controls={`category-${index}-${catIndex}`}
                           >
                             <span className="flex items-center">
-                             
                               <span className="">{category.category}</span>
                             </span>
                             {expandedCategories[`${index}-${catIndex}`] ? (
@@ -138,10 +142,13 @@ function RespNavbar({
                               role="list"
                             >
                               {category.items.map((item, itemIndex) => (
-                                <li key={itemIndex} className="border-t border-gray-500 py-1">
+                                <li
+                                  key={itemIndex}
+                                  className="border-t border-gray-300 py-1"
+                                >
                                   <Link
                                     to={item.path}
-                                    className="block text-gray-300 hover:text-white"
+                                    className="block text-gray-700 hover:text-white"
                                     onClick={repsonsiveHandler}
                                   >
                                     {item.name}
@@ -171,17 +178,12 @@ function RespNavbar({
                 <FiSun className="w-6 h-6" />
               )}
             </button>
-            <Link
-              to="/signup"
-              className="flex items-center bg-gray-50 hover:bg-gray-100 rounded-lg border p-2"
+            <a
+              href="mailto:user@example.com"
+              className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 transition-all duration-300"
             >
-              <span className="px-2 text-sm text-gray-700 font-semibold">
-                Login
-              </span>
-              <span>
-                <LuLogIn className="text-gray-700" size={24} />
-              </span>
-            </Link>
+              <MdEmail className="w-6 h-6" />
+            </a>
           </div>
         </motion.div>
       )}

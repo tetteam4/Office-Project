@@ -7,7 +7,7 @@ import { LuLogIn } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 import { FiSun, FiMoon } from "react-icons/fi"; // Icons for light/dark mode
-import { MdEmail, MdMenu } from "react-icons/md"; // Email icon
+import { MdEmail, MdMenu, MdClose } from "react-icons/md"; // Email icon
 import { Menu } from "@mui/material";
 
 const Header = () => {
@@ -42,11 +42,19 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#FFFFFF]  fixed z-40 p-4 top-0 left-0 right-0">
-      <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2">
+    <header className="bg-[#FFFFFF] fixed top-0  lg:sticky  z-40 p-2 border  left-0 right-0">
+      <div className="container mx-auto grid grid-cols-2  md:grid-cols-3 lg:grid-cols-2">
         {/* Logo */}
-        <div className="flex items-center gap-x-4 md:col-span-2 lg:col-span-1 justify-between">
-          <div className="text-3xl  font-bold  text-red-600">
+        <div className="flex items-center gap-x-5 md:col-span-2 lg:col-span-1 ">
+          <div
+            onClick={repsonsiveHandler} // Fixed function name
+            className="flex lg:hidden cursor-pointer justify-end items-center"
+          >
+            <span className="hover:bg-gray-400 rounded-full p-2 hover:text-white transition duration-300">
+              {isOpne ? <MdClose size={30} /> : <MdMenu size={30} />}
+            </span>
+          </div>
+          <div className="texFt-3xl  font-bold  text-red-600">
             <Link to="/" className="text-lg font-bold">
               <img
                 src={logo}
@@ -76,7 +84,18 @@ const Header = () => {
             )}
           </div>
         </div>
-
+        {/* login in responsive */}
+        <div className="flex justify-end lg:hidden">
+          <Link
+            to="/signup"
+            className="flex items-center bg-gray-50 hover:bg-gray-200 rounded-lg border p-1"
+          >
+            <span className="px-2 text-sm font-semibold">Login</span>
+            <span>
+              <LuLogIn className="text-gray-700" size={20} />
+            </span>
+          </Link>
+        </div>
         <div className="lg:flex items-center col-span-1 hidden justify-end gap-x-5">
           {/* Actions (Theme Toggle & Email Icon) */}
           <div className="flex items-center justify-between py-2 gap-x-5">
@@ -108,20 +127,13 @@ const Header = () => {
           </div>
         </div>
         {/* Burger Menu for repsonsive navbar */}
-        <div
-          onClick={repsonsiveHandler}
-          className="flex lg:hidden cursor-pointer col-span-1 justify-end items-center"
-        >
-          <span className="hover:bg-gray-400 rounded-full p-1 hover:text-white">
-            <MdMenu size={32} />
-          </span>
-        </div>
+        <div></div>
       </div>
       {isOpne && (
         <div>
           <div
             onClick={repsonsiveHandler}
-            className="fixed left-0 right-0 top-0
+            className="fixed left-0 right-0 top-24
                      bottom-0 bg-black opacity-80 z-10"
           ></div>
           <RespNavbar
