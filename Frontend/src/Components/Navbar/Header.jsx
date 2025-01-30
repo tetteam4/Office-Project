@@ -42,7 +42,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#FFFFFF] fixed top-0  lg:sticky  z-40 p-2 border  left-0 right-0">
+    <header className="bg-[#FFFFFF] fixed top-0  lg:sticky  z-30 p-2 border  left-0 right-0">
       <div className="container mx-auto grid grid-cols-2  md:grid-cols-3 lg:grid-cols-2">
         {/* Logo */}
         <div className="flex items-center gap-x-5 md:col-span-2 lg:col-span-1 ">
@@ -88,7 +88,7 @@ const Header = () => {
         <div className="flex justify-end lg:hidden">
           <Link
             to="/signup"
-            className="flex items-center bg-gray-50 hover:bg-gray-200 rounded-lg border p-1"
+            className="flex items-center bg-gray-50   p-1"
           >
             <span className="px-2 text-sm font-semibold">Login</span>
             <span>
@@ -117,7 +117,7 @@ const Header = () => {
             </a>
             <Link
               to="/signup"
-              className="flex items-center bg-gray-50 hover:bg-gray-100 rounded-lg border p-2"
+              className="flex items-center bg-gray-50 hover:bg-gray-100 lg:rounded-lg lg:border py-1 lg:p-2"
             >
               <span className="px-2 text-sm font-semibold">Login</span>
               <span>

@@ -8,7 +8,7 @@ export const Blog_Data = [
       "Web Development in 2025: What's Next?",
     ],
     description:
-      "Web development is evolving at an unprecedented pace, with advancements in AI, machine learning, and automation revolutionizing how websites and applications are built. In 2025, developers will increasingly rely on serverless computing, AI-driven web design, and Web3 technologies to create more efficient, scalable, and personalized user experiences. Progressive Web Apps (PWAs) will continue to bridge the gap between websites and mobile apps, while frameworks like Next.js and Remix will gain further traction. Additionally, the demand for highly interactive and accessible web experiences will push developers to adopt new standards and practices that prioritize user engagement and inclusivity.",
+      "Web development is evolving at an unprecedented pace evolving at an unprecedented pace, with advancements in AI, machine learning, and automation revolutionizing how websites and applications are built. In 2025, developers will increasingly rely on serverless computing, AI-driven web design, and Web3 technologies to create more efficient, scalable, and personalized user experiences. Progressive Web Apps (PWAs) will continue to bridge the gap between websites and mobile apps, while frameworks like Next.js and Remix will gain further traction. Additionally, the demand for highly interactive and accessible web experiences will push developers to adopt new standards and practices that prioritize user engagement and inclusivity.",
     date: "2025-02-10",
     images: [
       imge1,
