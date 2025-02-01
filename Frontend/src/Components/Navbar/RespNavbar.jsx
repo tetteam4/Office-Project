@@ -11,8 +11,8 @@ import { motion, AnimatePresence } from "framer-motion";
 function RespNavbar({
   repsonsiveHandler,
   isExpanded,
-  toggleTheme,
   darkMode,
+  setDarkMode,
   isOpne,
 }) {
   const [expandedMenus, setExpandedMenus] = useState({});
@@ -150,20 +150,38 @@ function RespNavbar({
 
           {/* Footer */}
           <div className="absolute  z-20 flex border bg-white p-3 items-center w-full justify-between px-5">
-            <label className="inline-flex items-center relative">
-              <input className="peer hidden" id="toggle" type="checkbox" />
-              <div
-                className="relative w-[110px] h-[40px] bg-white peer-checked:bg-zinc-500 border rounded-full 
-                     after:absolute after:content-[''] after:w-[35px] after:h-[35px] after:bg-gradient-to-r from-orange-500 to-yellow-400 
-                     peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[2px] after:left-[4px] 
-                     active:after:w-[35px] peer-checked:after:left-[102px] peer-checked:after:translate-x-[-100%] 
-                     shadow-sm duration-300 after:duration-300 after:shadow-md"
-              ></div>
-              {/* Sun Icon */}
-              <MdWbSunny className="fill-white peer-checked:opacity-60 absolute w-5 h-5 left-[13px]" />
-              {/* Moon Icon */}
-              <MdNightlight className="fill-black opacity-60 peer-checked:opacity-70 peer-checked:fill-white absolute w-5 h-5 right-[13px]" />
-            </label>
+           <div
+                         className={`relative flex items-center w-[110px] h-[40px] cursor-pointer rounded-full border 
+                 ${
+                   darkMode ? "bg-zinc-700" : "bg-white"
+                 } shadow-sm transition-all duration-300`}
+                       >
+                         {/* Toggle Circle */}
+                         <div
+                           className={`absolute w-[35px] h-[35px] rounded-full top-[2px] transition-all duration-300 shadow-md
+                   ${
+                     darkMode
+                       ? "left-[102px] translate-x-[-100%] bg-zinc-900"
+                       : "left-[4px] bg-gradient-to-r from-orange-500 to-yellow-400"
+                   }`}
+                         ></div>
+           
+                         {/* Sun Icon (Light Mode) */}
+                         <MdWbSunny
+                           onClick={() => setDarkMode(false)}
+                           className={`absolute left-[13px] w-5 h-5 transition-all ${
+                             darkMode ? "opacity-50" : "opacity-100"
+                           }`}
+                         />
+           
+                         {/* Moon Icon (Dark Mode) */}
+                         <MdNightlight
+                           onClick={() => setDarkMode(true)}
+                           className={`absolute right-[13px] w-5 h-5 transition-all ${
+                             darkMode ? "opacity-100 text-blue-700" : "opacity-50 text-black"
+                           }`}
+                         />
+                       </div>
             <a
               href="mailto:user@example.com"
               className="flex items-center justify-center w-10 h-10 bg-blue-500 text-white rounded-full shadow-md hover:bg-blue-600 transition-all duration-300"
