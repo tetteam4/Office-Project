@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import RespNavbar from "./RespNavbar";
 import { IoSearch } from "react-icons/io5";
-import { TfiShoppingCart } from "react-icons/tfi";
-import { GoSignIn } from "react-icons/go";
+
 import { LuLogIn } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
-import { FiSun, FiMoon } from "react-icons/fi"; // Icons for light/dark mode
+
 import { MdEmail, MdMenu, MdClose } from "react-icons/md"; // Email icon
 import { MdWbSunny, MdNightlight } from "react-icons/md";
 
@@ -16,19 +15,10 @@ const Header = () => {
   const [isOpne, setIsOpen] = useState(false);
   const [cardItems, setCardItems] = useState(0);
   const [darkMode, setDarkMode] = useState(() => {
-    const storedPreference = localStorage.getItem("darkMode");
-    return storedPreference === "true"; // Default to false if not set
+    const savedMode = localStorage.getItem("darkmode");
+    return savedMode === "false";
   });
 
-  // Toggle dark mode
-  const toggleTheme = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    localStorage.setItem("darkMode", newMode); // Save to localStorage
-    document.documentElement.classList.toggle("dark", newMode);
-  };
-
-  // Apply dark mode class to the document when darkMode changes
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -61,12 +51,10 @@ const Header = () => {
               <img
                 src={logo}
                 alt=""
-                className="h-14 w-auto mix-blend-multiply"
+                className="h-14 w-auto mix-blend-multiply dark:mix-blend-normal dark:rounded-md"
               />
             </Link>
           </div>
-
-        
         </div>
 
         {/* Login in responsive */}
@@ -84,29 +72,38 @@ const Header = () => {
           {/* Actions (Theme Toggle & Email Icon) */}
           <div className="flex items-center justify-between py-1.5 gap-x-5">
             {/* Dark Mode Toggle */}
-            <div className="flex items-center justify-between py-1.5 gap-x-5">
-            {/* Dark Mode Toggle */}
-            <label className="inline-flex items-center relative">
-              <input
-                className="peer hidden"
-                id="toggle"
-                type="checkbox"
-                onClick={toggleTheme}
-              />
+            <div
+              className={`relative flex items-center w-[110px] h-[40px] cursor-pointer rounded-full border 
+      ${
+        darkMode ? "bg-zinc-700" : "bg-white"
+      } shadow-sm transition-all duration-300`}
+            >
+              {/* Toggle Circle */}
               <div
-                className="relative w-[110px] h-[40px] bg-white peer-checked:bg-zinc-500 border rounded-full
-        after:absolute after:content-[''] after:w-[35px] after:h-[35px] after:bg-gradient-to-r from-orange-500 to-yellow-400
-        peer-checked:from-zinc-900 peer-checked:to-zinc-900 after:rounded-full after:top-[2px] after:left-[4px]
-        active:after:w-[35px] peer-checked:after:left-[102px] peer-checked:after:translate-x-[-100%]
-        shadow-sm duration-300 after:duration-300 after:shadow-md"
+                className={`absolute w-[35px] h-[35px] rounded-full top-[2px] transition-all duration-300 shadow-md
+        ${
+          darkMode
+            ? "left-[102px] translate-x-[-100%] bg-zinc-900"
+            : "left-[4px] bg-gradient-to-r from-orange-500 to-yellow-400"
+        }`}
               ></div>
-              {/* Sun Icon (Light Mode) */}
-              <MdWbSunny className="fill-white peer-checked:opacity-60 absolute w-5 h-5 left-[13px]" />
-              {/* Moon Icon (Dark Mode) */}
-              <MdNightlight className="fill-black opacity-60 peer-checked:opacity-70 peer-checked:fill-white absolute w-5 h-5 right-[13px]" />
-            </label>
-          </div>
 
+              {/* Sun Icon (Light Mode) */}
+              <MdWbSunny
+                onClick={() => setDarkMode(false)}
+                className={`absolute left-[13px] w-5 h-5 transition-all ${
+                  darkMode ? "opacity-50" : "opacity-100"
+                }`}
+              />
+
+              {/* Moon Icon (Dark Mode) */}
+              <MdNightlight
+                onClick={() => setDarkMode(true)}
+                className={`absolute right-[13px] w-5 h-5 transition-all ${
+                  darkMode ? "opacity-100 text-blue-700" : "opacity-50 text-black"
+                }`}
+              />
+            </div>
             {/* Email Icon */}
             <a
               href="mailto:user@example.com"
@@ -139,7 +136,7 @@ const Header = () => {
           <RespNavbar
             repsonsiveHandler={repsonsiveHandler}
             isExpanded={isExpanded}
-            toggleTheme={toggleTheme}
+            setDarkMode={setDarkMode}
             darkMode={darkMode}
             isClick={isClick}
             setIsClick={setIsClick}
