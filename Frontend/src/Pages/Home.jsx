@@ -7,6 +7,7 @@ import BlogCard from '../Components/Blog/BlogCard';
 import PortfolioHome from '../Components/Portfolio/PortfolioHome';
 
 import RecentlyHomeBlog from '../Components/Home/RecentlyHomeBlog';
+import ProjectStats from '../Components/Home/ProjectStats';
 
 
 
@@ -19,6 +20,7 @@ const HomePage = () => {
     <Tet_Detials />
     {/* Be Creative section */}
     <BeCreative />
+    <ProjectStats />
    <PortfolioHome />
    <RecentlyHomeBlog />
     </div>
