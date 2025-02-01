@@ -78,7 +78,7 @@ const ProjectStats = () => {
           <p className="text-2xl text-gray-600">suggestedProjects</p>
         </div>
 
-        {/* Upcoming Projects */}
+    
         <div className="relative border-t md:border-t-0 md:border-r p-4 flex justify-center text-center space-y-4">
           <div className="flex justify-around gap-x-8 items-center mt-6">
             <div>
