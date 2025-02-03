@@ -1,6 +1,7 @@
 import React from "react";
 import { Portfolio_Data } from "../Components/Portfolio/portfiliodata";
 import CategoryList from "../Components/Portfolio/CategoryList";
+import PortfolioCard from "../Components/Portfolio/PortfolioCard";
 const Portfolio = () => {
   return (
     <section className=" mx-auto max-w-6xl px-5">
@@ -12,6 +13,16 @@ const Portfolio = () => {
           <CategoryList Portfolio_Data={Portfolio_Data} />
         </aside>
         <div className="col-span-2 border h-full rounded-md"></div>
+      </div>
+      <div className="grid grid-cols-2 max-w-6xl gap-5 mt-10 mx-auto">
+        {
+          Portfolio_Data.map((port, index) => (
+            <PortfolioCard
+              key={index}
+              port={port}
+            />
+          ))
+        }
       </div>
     </section>
   );
