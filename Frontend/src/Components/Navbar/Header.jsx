@@ -100,7 +100,9 @@ const Header = () => {
               <MdNightlight
                 onClick={() => setDarkMode(true)}
                 className={`absolute right-[13px] w-5 h-5 transition-all ${
-                  darkMode ? "opacity-100 text-blue-700" : "opacity-50 text-black"
+                  darkMode
+                    ? "opacity-100 text-blue-700"
+                    : "opacity-50 text-black"
                 }`}
               />
             </div>
