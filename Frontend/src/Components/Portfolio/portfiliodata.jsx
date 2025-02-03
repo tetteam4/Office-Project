@@ -1,4 +1,6 @@
- export const Portfolio_Data = [
+import img from "../../assets/img.jpg"
+
+export const Portfolio_Data = [
     {
       name: "Tamado Print Shop",
       client: "Tamadon Print Shop",
@@ -7,7 +9,7 @@
       colors: ["Black", "Blue", "Yellow", "Pink"],
       images: {
         mobile: "/images/tamado-printshop-mobile.png",
-        laptop: "/images/tamado-printshop-laptop.png",
+        laptop: img,
         dashboard: "/images/tamado-printshop-dashboard.png",
       },
       usedTechnologies: {
@@ -50,7 +52,7 @@
       colors: ["White", "Red", "Black"],
       images: {
         mobile: "/images/shoe-shop-mobile.png",
-        laptop: "/images/shoe-shop-laptop.png",
+        laptop: img,
         productPage: "/images/shoe-shop-product.png",
         cartPage: "/images/shoe-shop-cart.png"
       },
@@ -86,7 +88,7 @@
       colors: ["Blue", "White", "Green"],
       images: {
         mobile: "/images/school-mis-mobile.png",
-        laptop: "/images/school-mis-laptop.png",
+        laptop: img,
         studentDashboard: "/images/school-mis-dashboard.png",
         classManagement: "/images/school-mis-classes.png"
       },
@@ -122,7 +124,7 @@
       colors: ["Dark", "Blue", "Purple"],
       images: {
         mobile: "/images/portfolio-mobile.png",
-        laptop: "/images/portfolio-laptop.png"
+        laptop: img
       },
       usedTechnologies: {
         frontend: [
