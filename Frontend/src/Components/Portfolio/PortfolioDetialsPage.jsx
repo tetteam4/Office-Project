@@ -28,8 +28,8 @@ const PortfolioDetialsPage = () => {
     <div className="max-w-7xl mx-auto">
       <Breadcrumb />
       <div className="flex flex-col md:flex-row gap-5">
-        <div className="lg:w-[25%] border h-full">
-          <CategoryList Portfolio_Data={ [port]} />
+        <div className="lg:w-[25%] border bg-green-100/95 h-full">
+          <CategoryList />
         </div>
         <div className="md:w-[75%] lg:w-[75%] w-full h-fit border p-2  rounded-md">
           <div className="h-auto ">

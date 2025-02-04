@@ -34,7 +34,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/category/:categoryName" element={<CategoryPage />} /> {/* New route */}
+            <Route path="/portfolio_ca/:categoryName" element={<CategoryPage />} /> {/* New route */}
             <Route path="/portfolio/:slug" element={<PortfolioDetialsPage />} />
             <Route path="/webdesign" element={<Web_Design />} />
             <Route path="/website-seo" element={<Web_Seo />} />

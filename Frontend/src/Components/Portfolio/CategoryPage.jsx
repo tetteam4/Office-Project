@@ -2,6 +2,7 @@ import React from "react";
 import { useParams , useNavigate } from "react-router-dom";
 import { Portfolio_Data } from "./portfiliodata";// Import your data
 import PortfolioCard from "./PortfolioCard";
+import Breadcrumb from "./Breadcrumb";
 
 const CategoryPage = () => {
   const { categoryName } = useParams(); // Extract the category name from the URL
@@ -14,6 +15,7 @@ const CategoryPage = () => {
 
   return (
     <div className="mx-auto max-w-7xl px-5 py-10">
+        <Breadcrumb />
       <h1 className="text-2xl font-bold mb-6">Projects in {categoryName}</h1>
       <div className="grid grid-cols-3 gap-5">
         {filteredProjects.map((project, index) => (
