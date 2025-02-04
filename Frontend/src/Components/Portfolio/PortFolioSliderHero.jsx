@@ -39,7 +39,7 @@ const PortFolioSliderHero = ({ Portfolio_Data }) => {
             <div className="w-full h-full flex flex-col items-center justify-center">
               {/* Card Container */}
               <motion.div
-                className="relative w-full border cursor-pointer h-[270px] overflow-hidden group"
+                className="relative w-full   cursor-pointer h-full overflow-hidden group"
                 whileHover="hover"
                 initial="initial"
                 exit="exit"
