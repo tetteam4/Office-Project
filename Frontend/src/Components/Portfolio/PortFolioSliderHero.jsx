@@ -1,17 +1,17 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useNavigate } from 'react-router-dom';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination ,Autoplay } from 'swiper/modules';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const PortFolioSliderHero = ({ Portfolio_Data }) => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <div className="w-full  h-full">
+    <div className="w-full relative overflow-visible h-full">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         autoplay={{ delay: 3000 }}
@@ -23,23 +23,26 @@ const PortFolioSliderHero = ({ Portfolio_Data }) => {
           prevEl: ".button-prev-slide",
         }}
         grabCursor={true}
-        className="h-full"
+        className="h-full overflow-visible"
       >
         {Portfolio_Data.map((port, index) => (
-          <SwiperSlide  onClick={() =>
-            navigate(
-              `/portfolio/${encodeURIComponent(
-                port.name.replace(/\s+/g, "-").toLowerCase()
-              )}`,
-              {
-                state: { port: port },
-              }
-            )
-          } key={index}>
+          <SwiperSlide
+            onClick={() =>
+              navigate(
+                `/portfolio/${encodeURIComponent(
+                  port.name.replace(/\s+/g, "-").toLowerCase()
+                )}`,
+                {
+                  state: { port: port },
+                }
+              )
+            }
+            key={index}
+          >
             <div className="w-full h-full flex flex-col items-center justify-center">
               {/* Card Container */}
               <motion.div
-                className="relative w-full   cursor-pointer h-full overflow-hidden group"
+                className="relative w-full   cursor-pointer h-full overflow-visible group"
                 whileHover="hover"
                 initial="initial"
                 exit="exit"
@@ -68,7 +71,7 @@ const PortFolioSliderHero = ({ Portfolio_Data }) => {
                     hover: { y: 0, opacity: 1 },
                     exit: { y: 100, opacity: 0 },
                   }}
-                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                   className="absolute bottom-0 left-0 w-full bg-[#02DB81] bg-opacity-70 text-white font-semibold p-4 text-center"
                 >
                   {port.name}
@@ -78,13 +81,13 @@ const PortFolioSliderHero = ({ Portfolio_Data }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-       {/* Navigation Buttons */}
-       <div className="button-prev-slide cursor-pointer hidden md:flex w-[40px] h-[40px] items-center justify-center rounded-full absolute top-1/2 -translate-y-1/2 -left-5 z-20 bg-white shadow-md">
+      {/* Navigation Buttons */}
+      {/* <div className="button-prev-slide cursor-pointer  hidden md:flex w-[40px] h-[40px] items-center justify-center rounded-full absolute top-1/2 -translate-y-1/2 -left-5 z-20 bg-white shadow-md">
             <MdArrowBackIos />
           </div>
           <div className="button-next-slide hidden cursor-pointer md:flex w-[40px] h-[40px] items-center justify-center rounded-full absolute top-1/2 -translate-y-1/2 -right-5 z-20 bg-white shadow-md">
             <MdArrowForwardIos />
-          </div>
+          </div> */}
     </div>
   );
 };

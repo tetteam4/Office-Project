@@ -11,6 +11,7 @@ const ProjectNameList = ({ Portfolio_Data }) => {
         </li>
         {Portfolio_Data.map((port, index) => (
           <li
+          key={index}
           onClick={() =>
             navigate(
               `/portfolio/${encodeURIComponent(

@@ -15,6 +15,8 @@ import Web_Design from "./Pages/Web_Design.jsx";
 import Blog from "./Pages/Blog.jsx";
 import Web_Seo from "./Pages/Web_Seo.jsx";
 import PortfolioDetialsPage from "./Components/Portfolio/PortfolioDetialsPage.jsx";
+import CategoryPage from "./Components/Portfolio/CategoryPage.jsx";
+
 
 const App = () => {
   return (
@@ -32,6 +34,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/category/:categoryName" element={<CategoryPage />} /> {/* New route */}
             <Route path="/portfolio/:slug" element={<PortfolioDetialsPage />} />
             <Route path="/webdesign" element={<Web_Design />} />
             <Route path="/website-seo" element={<Web_Seo />} />
