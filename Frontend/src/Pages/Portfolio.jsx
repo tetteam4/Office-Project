@@ -7,6 +7,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import PortFolioSliderHero from "../Components/Portfolio/PortFolioSliderHero";
 import ProjectNameList from "../Components/Portfolio/ProjectNameList";
 import PortfolioFiltering from "../Components/Portfolio/PortfolioFiltering";
+import LatestPortfolioWork from "../Components/Portfolio/LatestPortfolioWork";
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -18,7 +19,9 @@ const Portfolio = () => {
   const filteredData =
     selectedCategory === "All"
       ? Portfolio_Data
-      : Portfolio_Data.filter((project) => project.category === selectedCategory);
+      : Portfolio_Data.filter(
+          (project) => project.category === selectedCategory
+        );
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(filteredData.length / cardsPerPage);
@@ -52,12 +55,7 @@ const Portfolio = () => {
     setSelectedCategory(category);
     setCurrentPage(1); // Reset to the first page when the category changes
   };
-  const handleSortChange = (sortOption) => {
-    const sortedData = [...Portfolio_Data].sort((a, b) => {
-      return sortOption === "A-Z" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
-    });
-    setPortfolioData(sortedData); // Assuming Portfolio_Data is stored in a state
-  };
+  
 
   // Function to generate pagination buttons
   const renderPaginationButtons = () => {
@@ -151,17 +149,14 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="mx-auto border max-w-7xl ">
+    <section className="mx-auto  max-w-7xl ">
       <div className="py-4">
         <h1 className="text-2xl font-bold">Our Works</h1>
       </div>
       <div className="grid grid-cols-4 max-w-7xl mx-auto h-auto items-start gap-x-3">
         {/* Left Aside - Category List */}
         <aside className="col-span-1 border h-auto bg-green-100/95 min-h-0 overflow-auto">
-          <CategoryList
-            Portfolio_Data={Portfolio_Data}
-            
-          />
+          <CategoryList Portfolio_Data={Portfolio_Data} />
         </aside>
 
         {/* Middle Section - Portfolio Slider Hero */}
@@ -225,6 +220,10 @@ const Portfolio = () => {
             Next <FaChevronRight className="ml-2 " />
           </button>
         )}
+      </div>
+
+      <div className="mt-10">
+        <LatestPortfolioWork Portfolio_Data={Portfolio_Data} />
       </div>
     </section>
   );
