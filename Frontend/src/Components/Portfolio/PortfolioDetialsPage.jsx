@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Breadcrumb from "./Breadcrumb";
 import CategoryList from "./CategoryList";
+import RelatedCategoryPortfolio from "./RelatedCategoryPortfolio";
 const PortfolioDetialsPage = () => {
   const { slug } = useParams();
   const location = useLocation();
@@ -52,6 +53,7 @@ const PortfolioDetialsPage = () => {
           {/* Add RelatedPosts component */}
         </div>
       </div>
+      <RelatedCategoryPortfolio category={port.category} currentPostId={port.id} />
     </div>
   );
 };
