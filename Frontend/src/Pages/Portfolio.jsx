@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import {  useNavigate } from "react-router-dom";
 import { Portfolio_Data } from "../Components/Portfolio/portfiliodata";
 import CategoryList from "../Components/Portfolio/CategoryList";
 import PortfolioCard from "../Components/Portfolio/PortfolioCard";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import icons
+import PortFolioSliderHero from "../Components/Portfolio/PortFolioSliderHero";
+import ProjectNameList from "../Components/Portfolio/ProjectNameList";
 
 const Portfolio = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1); // Current page state
-  const cardsPerPage = 1; // Number of cards to display per page
+  const cardsPerPage = 6; // Number of cards to display per page
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(Portfolio_Data.length / cardsPerPage);
@@ -131,17 +135,43 @@ const Portfolio = () => {
       <div className="py-4">
         <h1 className="text-2xl font-bold">Our Works</h1>
       </div>
-      <div className="grid grid-cols-3 max-w-6xl mx-auto h-full items-center gap-x-5">
-        <aside className="col-span-1 border h-full bg-green-100/95 rounded-md">
+      <div className="grid grid-cols-4 max-w-7xl mx-auto h-auto items-start gap-x-3">
+        {/* Left Aside - Category List */}
+        <aside className="col-span-1 border h-auto bg-green-100/95 min-h-0 overflow-auto">
           <CategoryList Portfolio_Data={Portfolio_Data} />
         </aside>
-        <div className="col-span-2 border h-full rounded-md"></div>
+
+        {/* Middle Section - Portfolio Slider Hero */}
+        <div
+          className="col-span-2 border h-[3
+        00px]  min-h-0 overflow-auto"
+        >
+          <PortFolioSliderHero Portfolio_Data={Portfolio_Data} />
+        </div>
+
+        {/* Right Aside - Project Name List */}
+        <aside className="col-span-1 border h-auto bg-green-100/95 min-h-0 overflow-auto">
+          <ProjectNameList Portfolio_Data={Portfolio_Data} />
+        </aside>
       </div>
 
       {/* Portfolio Card */}
       <div className="grid grid-cols-3 max-w-7xl gap-5 mt-10 mx-auto">
         {currentCards.map((port, index) => (
-          <PortfolioCard key={index} port={port} />
+          <PortfolioCard
+            key={index}
+            port={port}
+            onClick={() =>
+              navigate(
+                `/portfolio/${encodeURIComponent(
+                  port.name.replace(/\s+/g, "-").toLowerCase()
+                )}`,
+                {
+                  state: { port: port },
+                }
+              )
+            }
+          />
         ))}
       </div>
 
