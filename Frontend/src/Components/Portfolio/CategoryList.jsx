@@ -11,7 +11,7 @@ const CategoryList = ({ Portfolio_Data }) => {
               <MdCategory size={40} />
             </span>
             <p className="">
-              <span className="text-gray-700 text-sm">web design portfolio </span>
+              <span className="text-gray-700 text-sm">Website for </span>
               <span className="font-bold text-md"> {port.category}</span>
             </p>
           </li>
