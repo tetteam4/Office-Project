@@ -1,10 +1,11 @@
 import img from "../../assets/img.jpg";
+import mobile from "../../assets/mobile3.png"
 
 export const Portfolio_Data = [
   {
     id: 1,
-    name: "Tamado Print Shop",
-    client: "Tamadon Print Shop",
+    name: "Tamadon Print Shop",
+    client: "Tamadon shop",
     category: "E-commerce",
     rating: {
       top: true,
@@ -13,7 +14,8 @@ export const Portfolio_Data = [
     websiteLink: "https://github.com/tetteam4/Tamado-PrintShop",
     colors: ["Black", "Blue", "Yellow", "Pink"],
     images: {
-      mobile: "/images/tamado-printshop-mobile.png",
+      log: img,
+      mobile: img,
       laptop: img,
       dashboard: "/images/tamado-printshop-dashboard.png",
     },
@@ -36,7 +38,7 @@ export const Portfolio_Data = [
     },
     description: {
       projectOverview:
-        "Tamado Print Shop is an advanced e-commerce platform tailored for printing services...",
+        "Tamadon Printing Press specializes in high-quality custom printing, including business cards, brochures, banners, packaging, and promotional materials. Our expert team blends traditional techniques with modern innovation to deliver vibrant, precise, and durable prints. We are committed to elevating brand identity with cutting-edge digital printing and fast turnaround times. Whether for corporate branding or custom print needs, we bring your vision to life.    ",
       frontendSection:
         "Developed using React.js and Tailwind CSS, featuring a **dynamic search**, **cart management**, and **secure checkout**.",
       backendSection:

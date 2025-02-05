@@ -32,28 +32,65 @@ const PortfolioDetialsPage = () => {
         <div className="lg:w-[25%] border bg-green-100/95 h-full">
           <CategoryList />
         </div>
-        <div className="md:w-[75%] lg:w-[75%] w-full h-fit border p-2  rounded-md">
+        <div className="md:w-[75%] lg:w-[75%]  w-full h-fit mt-5 p-2  rounded-md">
           <div className="h-auto ">
-            <h1 className="text-2xl font-extrabold text-gray-900 dark:text-white ">
+            <h1 className="text-2xl font-extrabold mb-5 text-gray-900 dark:text-white ">
               {port.name}
             </h1>
           </div>
-
-          <div className="relative w-full mt-3 h-[300px] md:h-[300px] lg:h-[500px] rounded-md overflow-hidden mb-6">
-            <img
-              src={port.images.laptop}
-              alt={port.name}
-              className="w-full h-full object-cover rounded-xl"
-            />
+          <div className="">
+            <p className="text-justify text-gray-600 text-base">
+              {port.description.projectOverview}
+            </p>
+            <p className="text-gray-600">
+              For more information about{" "}
+              <span className="font-bold text-green-600">
+                {port.category} website design
+              </span>{" "}
+              , contact Tech Elevate Team consultants.
+            </p>
+            <p className="mt-5 text-black">
+              In the image below, you can see the overall layout of the{" "}
+              {port.name} website and the elements used in its design.
+            </p>
           </div>
-          <p className="text-gray-700 dark:text-gray-300 text-justify leading-relaxed">
-            {port.description.projectOverview}
-          </p>
+          <div className="w-full flex justify-center items-center my-10">
+            <button class="cursor-pointer font-semibold rounded-md overflow-hidden relative z-100 border border-green-500 group px-4 py-2">
+              <span class="relative z-10 text-green-500 group-hover:text-white text-md duration-300">
+                View Website
+              </span>
+              <span class="absolute w-full h-full bg-[#02DB81] -left-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:left-0 duration-500"></span>
+              <span class="absolute w-full h-full bg-[#02DB81]  -right-32 top-0 -rotate-45 group-hover:rotate-0 group-hover:right-0 duration-500"></span>
+            </button>
+          </div>
+          <div className="relative w-full mt-3 h-[300px] md:h-[300px]  lg:h-[400px] rounded-md overflow-hidden mb-6">
+          <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col md:flex-row items-center gap-4">
+                <div className="relative border rounded-md border-gray-200   shadow-2xl w-[400px] h-[300px] md:w-[670px] md:h-[400px]">
+                  <img
+                    src={port.images.laptop}
+                    alt={port.name}
+                    className="w-full h-full rounded-md"
+                  />
+                </div>
+                <div className="relative border border-gray-200 rounded-md shadow-lg w-[150px] h-[300px] md:w-[230px] md:h-[400px]">
+                  <img
+                    src={port.images.log}
+                    alt={port.name}
+                    className="w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Add RelatedPosts component */}
         </div>
       </div>
-      <RelatedCategoryPortfolio category={port.category} currentPostId={port.id} />
+      <RelatedCategoryPortfolio
+        category={port.category}
+        currentPostId={port.id}
+      />
     </div>
   );
 };
