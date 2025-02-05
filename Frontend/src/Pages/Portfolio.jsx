@@ -8,6 +8,7 @@ import PortFolioSliderHero from "../Components/Portfolio/PortFolioSliderHero";
 import ProjectNameList from "../Components/Portfolio/ProjectNameList";
 import PortfolioFiltering from "../Components/Portfolio/PortfolioFiltering";
 import LatestPortfolioWork from "../Components/Portfolio/LatestPortfolioWork";
+import TopPortfolioList from "../Components/Portfolio/TopPortfolioList";
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -55,7 +56,6 @@ const Portfolio = () => {
     setSelectedCategory(category);
     setCurrentPage(1); // Reset to the first page when the category changes
   };
-  
 
   // Function to generate pagination buttons
   const renderPaginationButtons = () => {
@@ -198,35 +198,37 @@ const Portfolio = () => {
 
       {/* Pagination */}
       {totalPages > 1 && (
-  <div className="flex justify-start items-center my-10 space-x-2">
-    {/* Previous Button */}
-    {currentPage > 1 && (
-      <button
-        onClick={handlePreviousPage}
-        className="flex items-center px-3 text-sm py-1.5 rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-[#02DB81] hover:text-white transition-all shadow-sm"
-      >
-        <FaChevronLeft className="mr-2" /> Previous
-      </button>
-    )}
+        <div className="flex justify-start items-center my-10 space-x-2">
+          {/* Previous Button */}
+          {currentPage > 1 && (
+            <button
+              onClick={handlePreviousPage}
+              className="flex items-center px-3 text-sm py-1.5 rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-[#02DB81] hover:text-white transition-all shadow-sm"
+            >
+              <FaChevronLeft className="mr-2" /> Previous
+            </button>
+          )}
 
-    {/* Render Pagination Buttons */}
-    {renderPaginationButtons()}
+          {/* Render Pagination Buttons */}
+          {renderPaginationButtons()}
 
-    {/* Next Button */}
-    {currentPage < totalPages && (
-      <button
-        onClick={handleNextPage}
-        className="flex items-center px-3 py-1.5 hover:bg-[#02DB81] rounded-md text-sm bg-white border border-gray-300 text-gray-700 hover:text-white transition-all shadow-sm"
-      >
-        Next <FaChevronRight className="ml-2 " />
-      </button>
-    )}
-  </div>
-)}
-
+          {/* Next Button */}
+          {currentPage < totalPages && (
+            <button
+              onClick={handleNextPage}
+              className="flex items-center px-3 py-1.5 hover:bg-[#02DB81] rounded-md text-sm bg-white border border-gray-300 text-gray-700 hover:text-white transition-all shadow-sm"
+            >
+              Next <FaChevronRight className="ml-2 " />
+            </button>
+          )}
+        </div>
+      )}
 
       <div className="mt-10">
         <LatestPortfolioWork Portfolio_Data={Portfolio_Data} />
+      </div>
+      <div className="mt-10">
+        <TopPortfolioList Portfolio_Data={Portfolio_Data} />
       </div>
     </section>
   );

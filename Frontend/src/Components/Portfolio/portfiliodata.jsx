@@ -6,6 +6,10 @@ export const Portfolio_Data = [
     name: "Tamado Print Shop",
     client: "Tamadon Print Shop",
     category: "E-commerce",
+    rating: {
+      top: true,
+      image: "/images/school-mis-mobile.png",
+    },
     websiteLink: "https://github.com/tetteam4/Tamado-PrintShop",
     colors: ["Black", "Blue", "Yellow", "Pink"],
     images: {
@@ -93,6 +97,10 @@ export const Portfolio_Data = [
     name: "School Management System",
     client: "Greenfield Academy",
     category: "Education",
+    rating: {
+      top: true,
+      image: "/images/school-mis-mobile.png",
+    },
     websiteLink: "https://github.com/example/school-mis",
     colors: ["Blue", "White", "Green"],
     images: {
@@ -135,6 +143,11 @@ export const Portfolio_Data = [
     name: "School Management System",
     client: "Greenfield Academy",
     category: "E-commerce",
+    rating: {
+      top: true,
+      image: "/images/school-mis-mobile.png",
+    },
+
     websiteLink: "https://github.com/example/school-mis",
     colors: ["Blue", "White", "Green"],
     images: {
@@ -249,6 +262,11 @@ export const Portfolio_Data = [
     name: "Chat Application",
     client: "Private Client",
     category: "Communication",
+    rating: {
+      top: true,
+      image: "/images/school-mis-mobile.png",
+    },
+
     websiteLink: "https://github.com/example/chat-app",
     colors: ["Purple", "Gray", "Dark"],
     images: {
