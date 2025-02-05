@@ -31,7 +31,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = ["apps.core"]
 
 THIRD_PARTY_APPS = [
     "rest_framework",
@@ -123,7 +123,7 @@ DATABASES = {
 }
 
 ADMIN_URL = "supersecret/"
-AUTH_USER_MODEL = "users.User"
+# AUTH_USER_MODEL = "users.User"
 
 
 CORS_URLS_REGEX = "^api/.*$"
