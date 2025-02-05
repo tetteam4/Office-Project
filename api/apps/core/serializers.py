@@ -4,8 +4,9 @@ from .models import BlogPost, Category, Portfolio, Section, Technology
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    model = Category
-    fields = ["id", "name", "created_at", "updated_at"]
+    class Meta:
+        model = Category
+        fields = ["id", "name"]
 
 
 class TechnologySerializer(serializers.ModelSerializer):

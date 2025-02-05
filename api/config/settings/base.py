@@ -123,7 +123,6 @@ DATABASES = {
 }
 
 ADMIN_URL = "supersecret/"
-# AUTH_USER_MODEL = "users.User"
 
 
 CORS_URLS_REGEX = "^api/.*$"
@@ -153,7 +152,7 @@ REST_AUTH = {
     "USE_JWT": True,
     "JWT_AUTH_COOKIE": "authors-access-token",
     "JWT_AUTH_REFRESH_COOKIE": "author-refresh-token",
-    "REGISTER_SERIALIZER": "apps.users.serializers.CustomRegisterSerializer",
+    # "REGISTER_SERIALIZER": "apps.users.serializers.CustomRegisterSerializer",
 }
 AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
