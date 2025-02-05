@@ -9,7 +9,7 @@ const CategoryList = () => {
   // Ensure Portfolio_Data is an array
 
   // Get unique categories from Portfolio_Data
-  const categories = ["All", ...new Set(Portfolio_Data.map((project) => project.category.trim()))];
+  const categories = [...new Set(Portfolio_Data.map((project) => project.category.trim()))];
 
   return (
     <div className="p-4">

@@ -5,7 +5,7 @@ const PortfolioCard = ({ port, onClick }) => {
   return (
     <motion.div
       onClick={onClick}
-      className="relative w-[400px] border cursor-pointer h-[270px] overflow-hidden group"
+      className="relative w-[400px] border cursor-pointer h-[250px] overflow-hidden group"
       whileHover="hover"
       initial="initial"
       exit="exit"
