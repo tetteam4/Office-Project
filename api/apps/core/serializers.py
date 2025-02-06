@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from taggit.serializers import TagListSerializerField
 
 from .models import BlogPost, Category, Portfolio, Section, Technology
 
@@ -10,7 +11,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class TechnologySerializer(serializers.ModelSerializer):
-    tags = serializers.ListField(child=serializers.CharField())
+    tags = TagListSerializerField()
 
     class Meta:
         model = Technology
@@ -20,12 +21,12 @@ class TechnologySerializer(serializers.ModelSerializer):
 class SectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Section
-        fields = ["section_id", "subtitle", "image", "description"]
+        fields = ["id", "subtitle", "image", "description"]
 
 
 class BlogPostSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
-    sections = SectionSerializer(many=True)
+    section = SectionSerializer(many=True)
 
     class Meta:
         model = BlogPost
@@ -36,7 +37,7 @@ class BlogPostSerializer(serializers.ModelSerializer):
             "hero_image",
             "general_info",
             "conclusion",
-            "sections",
+            "section",
         ]
 
 
