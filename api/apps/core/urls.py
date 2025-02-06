@@ -3,6 +3,9 @@ from rest_framework.routers import DefaultRouter
 
 from . import views
 
+router = DefaultRouter()
+router.register("teams", views.TeamViewSet)
+
 urlpatterns = [
     path("categories/", views.CategoryListView.as_view(), name="category-list"),
     path(
@@ -32,4 +35,5 @@ urlpatterns = [
         views.PortfolioDetailView.as_view(),
         name="portfolio-detail",
     ),
+    path("", include(router.urls)),
 ]

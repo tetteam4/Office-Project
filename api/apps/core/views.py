@@ -1,6 +1,7 @@
 # views.py
 from django.http import Http404
 from rest_framework import generics, permissions, viewsets
+from rest_framework.exceptions import NotFound
 from rest_framework.mixins import (
     CreateModelMixin,
     DestroyModelMixin,
@@ -9,12 +10,13 @@ from rest_framework.mixins import (
     UpdateModelMixin,
 )
 
-from .models import BlogPost, Category, Portfolio, Section, Technology
+from .models import BlogPost, Category, Portfolio, Section, Team, Technology
 from .serializers import (
     BlogPostSerializer,
     CategorySerializer,
     PortfolioSerializer,
     SectionSerializer,
+    TeamSerializer,
     TechnologySerializer,
 )
 
@@ -171,3 +173,20 @@ class PortfolioDetailView(generics.RetrieveUpdateDestroyAPIView):
         except Portfolio.DoesNotExist:
             logger.error(f"Portfolio with ID {self.kwargs['pk']} not found")
             raise Http404("Portfolio not found")
+
+    def perform_destroy(self, instance):
+        logger.debug(f"Deleting portfolio with ID: {instance.id}")
+        instance.delete()
+        logger.info(f"Portfolio with ID {instance.id} deleted successfully")
+
+
+class TeamViewSet(viewsets.ModelViewSet):
+    queryset = Team.objects.all()
+    serializer_class = TeamSerializer
+    permission_classes = [permissions.AllowAny]
+
+    def get_object(self):
+        try:
+            return Team.objects.get(id=self.kwargs["pk"])
+        except Team.DoesNotExist:
+            raise NotFound("Team not found")
