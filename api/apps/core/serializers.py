@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from taggit.serializers import TagListSerializerField
 
-from .models import BlogPost, Category, Portfolio, Section, Team, Technology
+from .models import About, BlogPost, Category, Portfolio, Section, Team, Technology
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -84,4 +84,22 @@ class TeamSerializer(serializers.ModelSerializer):
             "twitter_link",
             "linkedin",
             "github",
+        ]
+
+
+class AboutSerializer(serializers.ModelSerializer):
+    technologies_used = TechnologySerializer(many=True, read_only=True)
+
+    class Meta:
+        model = About
+        fields = [
+            "id",
+            "name",
+            "description",
+            "company_story",
+            "services",
+            "technologies_used",
+            "address",
+            "contact_email",
+            "contact_phone",
         ]
