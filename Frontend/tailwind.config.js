@@ -14,6 +14,7 @@ export default {
       colors: {
         primary: "#FFFFFF",
         secondary: "#F0F4FF",
+        
       },
       scrollbar: {
         width: "5px",

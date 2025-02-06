@@ -1,10 +1,17 @@
 import img from "../../assets/img.jpg";
+import reactjs from "../../assets/icons/tools_reactjs.png";
+import nodejs from "../../assets/icons/tools_nodejs.png";
+import bootstrap from "../../assets/icons/tools_bootstrap.png";
+import django from "../../assets/icons/tools_django.png";
+import python from "../../assets/icons/tools_python.png";
+import mongodm from "../../assets/icons/tools_mogodb.png";
+import musql from "../../assets/icons/tools_musql.png";
 
 export const Portfolio_Data = [
   {
     id: 1,
-    name: "Tamado Print Shop",
-    client: "Tamadon Print Shop",
+    name: "Tamadon Print Shop",
+    client: "Tamadon shop",
     category: "E-commerce",
     rating: {
       top: true,
@@ -13,21 +20,28 @@ export const Portfolio_Data = [
     websiteLink: "https://github.com/tetteam4/Tamado-PrintShop",
     colors: ["Black", "Blue", "Yellow", "Pink"],
     images: {
-      mobile: "/images/tamado-printshop-mobile.png",
+      log: img,
+      mobile: img,
       laptop: img,
       dashboard: "/images/tamado-printshop-dashboard.png",
     },
     usedTechnologies: {
       frontend: [
-        { name: "React.js", icon: "/icons/react.svg" },
-        { name: "Tailwind CSS", icon: "/icons/tailwind.svg" },
-        { name: "HTMX", icon: "/icons/htmx.svg" },
+        { name: "React.js", icon: reactjs },
+        { name: "Tailwind CSS", icon: bootstrap },
+        { name: "Html", icon: "/icons/htmx.svg" },
+        { name: "NextJs", icon: reactjs },
       ],
       backend: [
-        { name: "Django", icon: "/icons/django.svg" },
-        { name: "Django REST Framework", icon: "/icons/drf.svg" },
+        { name: "Django", icon: django },
+        { name: "Node Js", icon: nodejs },
+        { name: "Django REST Framework", icon: python },
+        { name: "Python", icon: python },
       ],
-      database: { name: "MySQL", icon: "/icons/mysql.svg" },
+      database: [
+        { name: "MySQL", icon: musql },
+        { name: "MongoDB", icon: mongodm },
+      ],
       other: [
         { name: "Redux", icon: "/icons/redux.svg" },
         { name: "Cloudinary", icon: "/icons/cloudinary.svg" },
@@ -36,7 +50,7 @@ export const Portfolio_Data = [
     },
     description: {
       projectOverview:
-        "Tamado Print Shop is an advanced e-commerce platform tailored for printing services...",
+        "Tamadon Printing Press specializes in high-quality custom printing, including business cards, brochures, banners, packaging, and promotional materials. Our expert team blends traditional techniques with modern innovation to deliver vibrant, precise, and durable prints. We are committed to elevating brand identity with cutting-edge digital printing and fast turnaround times. Whether for corporate branding or custom print needs, we bring your vision to life.    ",
       frontendSection:
         "Developed using React.js and Tailwind CSS, featuring a **dynamic search**, **cart management**, and **secure checkout**.",
       backendSection:
