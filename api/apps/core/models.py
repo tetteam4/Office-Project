@@ -1,7 +1,8 @@
-from apps.common.models import TimeStampedUUIDModel
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from taggit.managers import TaggableManager
+
+from apps.common.models import TimeStampedUUIDModel
 
 
 class Category(TimeStampedUUIDModel):
@@ -73,7 +74,7 @@ class BlogPost(TimeStampedUUIDModel):
     title = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     hero_image = models.ImageField(upload_to="blogs/heroes/")
-    section = models.ForeignKey("Section", on_delete=Category)
+    section = models.ManyToManyField("Section")
     general_info = models.TextField()
     conclusion = models.TextField()
 
@@ -86,11 +87,7 @@ class BlogPost(TimeStampedUUIDModel):
         ordering = ["-created_at"]
 
 
-class Section(models.Model):
-    section_id = models.CharField(max_length=100, unique=True)
-    blog_post = models.ForeignKey(
-        BlogPost, related_name="sections", on_delete=models.CASCADE
-    )
+class Section(TimeStampedUUIDModel):
     subtitle = models.CharField(max_length=200)
     image = models.ImageField(upload_to="blogs/sections/")
     description = models.TextField()
