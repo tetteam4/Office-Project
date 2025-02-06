@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = [
     "dj_rest_auth",
     "dj_rest_auth.registration",
     "taggit",
+    "ckeditor",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -122,7 +123,7 @@ DATABASES = {
     }
 }
 
-ADMIN_URL = "supersecret/"
+ADMIN_URL = "tetadmin/"
 
 
 CORS_URLS_REGEX = "^api/.*$"

@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from taggit.managers import TaggableManager
@@ -49,7 +50,7 @@ class Portfolio(TimeStampedUUIDModel):
     top_images = models.ImageField(upload_to="portfolio/", null=True, blank=True)
     dashboard_images = models.ImageField(upload_to="portfolio/", null=True, blank=True)
     nav_images = models.ImageField(upload_to="portfolio/", null=True, blank=True)
-    description = models.TextField(blank=True, null=True)
+    description = RichTextField(blank=True, null=True)
     deployment = models.CharField(blank=True, null=True, max_length=255)
     frontend_technologies = models.ManyToManyField(
         Technology, related_name="frontend_technologies", blank=True
@@ -101,3 +102,62 @@ class Section(TimeStampedUUIDModel):
     class Meta:
         verbose_name = _("Section")
         verbose_name_plural = _("Sections")
+
+
+class Team(TimeStampedUUIDModel):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    designation = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to="photos/%Y/%m/%d/")
+    whatsapp = models.URLField(max_length=100)
+    twitter_link = models.URLField(max_length=100)
+    linkedin = models.URLField(max_length=100)
+    github = models.URLField(max_length=100)
+
+    def __str__(self):
+        return self.first_name
+
+
+class About(TimeStampedUUIDModel):
+    class ServiceChoices(models.TextChoices):
+        DEVELOPMENT = "Development", _("Development")
+        DESIGN = "Design", _("Design")
+        MARKETING = "Hosting", _("Hosting")
+        OTHER = "Other", _("Other")
+
+    name = models.CharField(max_length=200, verbose_name=_("Company Name"))
+    description = models.TextField(
+        blank=True, null=True, verbose_name=_("Company Description")
+    )
+    company_story = models.TextField(
+        blank=True, null=True, verbose_name=_("Company Story")
+    )
+    services = models.CharField(
+        max_length=200,
+        choices=ServiceChoices.choices,
+        default=ServiceChoices.DEVELOPMENT,
+        verbose_name=_("Main Service"),
+    )
+    technologies_used = models.ManyToManyField(
+        Technology,
+        related_name="technologies",
+        blank=True,
+        verbose_name=_("Technologies Used"),
+    )
+
+    address = models.CharField(
+        max_length=255, blank=True, null=True, verbose_name=_("Company Address")
+    )
+    contact_email = models.EmailField(
+        blank=True, null=True, verbose_name=_("Contact Email")
+    )
+    contact_phone = models.CharField(
+        max_length=20, blank=True, null=True, verbose_name=_("Contact Phone")
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("About Us")
+        verbose_name_plural = _("About Us")
