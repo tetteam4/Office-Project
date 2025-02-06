@@ -26,4 +26,10 @@ urlpatterns = [
     path(
         "blogs/<uuid:id>/", views.BlogPostDetailView.as_view(), name="blogpost-detail"
     ),
+    path("portfolios/", views.PortfolioListView.as_view(), name="portfolio-list"),
+    path(
+        "portfolios/<uuid:pk>/",
+        views.PortfolioDetailView.as_view(),
+        name="portfolio-detail",
+    ),
 ]
