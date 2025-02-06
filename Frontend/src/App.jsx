@@ -16,6 +16,7 @@ import Blog from "./Pages/Blog.jsx";
 import Web_Seo from "./Pages/Web_Seo.jsx";
 import PortfolioDetialsPage from "./Components/Portfolio/PortfolioDetialsPage.jsx";
 import CategoryPage from "./Components/Portfolio/CategoryPage.jsx";
+import NotFound from "./Pages/NotFound.jsx";
 
 
 const App = () => {
@@ -34,16 +35,20 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/portfolio_ca/:categoryName" element={<CategoryPage />} /> {/* New route */}
+            <Route
+              path="/portfolio_ca/:categoryName"
+              element={<CategoryPage />}
+            />{" "}
+            {/* New route */}
             <Route path="/portfolio/:slug" element={<PortfolioDetialsPage />} />
             <Route path="/webdesign" element={<Web_Design />} />
             <Route path="/website-seo" element={<Web_Seo />} />
             <Route path="/blog" element={<Blog />} />
           </Route>
-
           <Route path="/verify_email/*" element={<VerifyEmail />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
