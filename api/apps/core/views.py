@@ -1,6 +1,6 @@
 # views.py
 from django.http import Http404
-from rest_framework import generics, permissions, viewsets
+from rest_framework import generics, permissions, status, viewsets
 from rest_framework.exceptions import NotFound
 from rest_framework.mixins import (
     CreateModelMixin,
@@ -9,9 +9,11 @@ from rest_framework.mixins import (
     RetrieveModelMixin,
     UpdateModelMixin,
 )
+from rest_framework.response import Response
 
-from .models import BlogPost, Category, Portfolio, Section, Team, Technology
+from .models import About, BlogPost, Category, Portfolio, Section, Team, Technology
 from .serializers import (
+    AboutSerializer,
     BlogPostSerializer,
     CategorySerializer,
     PortfolioSerializer,
@@ -21,7 +23,6 @@ from .serializers import (
 )
 
 
-# View for listing and creating categories
 class CategoryListView(generics.GenericAPIView, ListModelMixin, CreateModelMixin):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -190,3 +191,28 @@ class TeamViewSet(viewsets.ModelViewSet):
             return Team.objects.get(id=self.kwargs["pk"])
         except Team.DoesNotExist:
             raise NotFound("Team not found")
+
+
+class AboutCreateView(generics.ListCreateAPIView):
+    queryset = About.objects.all()
+    serializer_class = AboutSerializer
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            about = serializer.save()
+            return Response(
+                AboutSerializer(about).data,
+                status=status.HTTP_201_CREATED,
+            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class AboutView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = About.objects.all()
+    serializer_class = AboutSerializer
+    permission_classes = [permissions.AllowAny]
+
+    def get_object(self):
+        return About.objects.first()

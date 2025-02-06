@@ -36,4 +36,6 @@ urlpatterns = [
         name="portfolio-detail",
     ),
     path("", include(router.urls)),
+    path("about/", views.AboutCreateView.as_view(), name="about-create"),  # Handle POST
+    path("about/<uuid:pk>/", views.AboutView.as_view(), name="about-detail"),
 ]
