@@ -1,4 +1,5 @@
 # views.py
+from django.http import Http404
 from rest_framework import generics, permissions, viewsets
 from rest_framework.mixins import (
     CreateModelMixin,
@@ -8,10 +9,11 @@ from rest_framework.mixins import (
     UpdateModelMixin,
 )
 
-from .models import BlogPost, Category, Section, Technology
+from .models import BlogPost, Category, Portfolio, Section, Technology
 from .serializers import (
     BlogPostSerializer,
     CategorySerializer,
+    PortfolioSerializer,
     SectionSerializer,
     TechnologySerializer,
 )
@@ -134,3 +136,38 @@ class BlogPostDetailView(generics.RetrieveAPIView):
     serializer_class = BlogPostSerializer
     permission_classes = [permissions.AllowAny]
     lookup_field = "id"
+
+
+class PortfolioListView(generics.ListAPIView):
+    queryset = Portfolio.objects.all()
+    serializer_class = PortfolioSerializer
+    permission_classes = [permissions.AllowAny]
+
+
+class PortfolioListView(generics.ListAPIView):
+    serializer_class = PortfolioSerializer
+    permission_classes = [permissions.AllowAny]
+
+    def get_queryset(self):
+
+        queryset = Portfolio.objects.all()
+        return queryset
+
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+class PortfolioDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Portfolio.objects.all()
+    serializer_class = PortfolioSerializer
+    permission_classes = [permissions.AllowAny]
+
+    def get_object(self):
+        logger.debug(f"Fetching portfolio with ID: {self.kwargs['pk']}")
+        try:
+            return Portfolio.objects.get(id=self.kwargs["pk"])
+        except Portfolio.DoesNotExist:
+            logger.error(f"Portfolio with ID {self.kwargs['pk']} not found")
+            raise Http404("Portfolio not found")

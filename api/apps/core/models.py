@@ -45,10 +45,10 @@ class Portfolio(TimeStampedUUIDModel):
     )
     web_url = models.URLField(blank=True, null=True)
     images = models.ImageField(upload_to="portfolio/")
-    log_images = models.ImageField(upload_to="portfolio/")
-    top_images = models.ImageField(upload_to="portfolio/")
-    dashboard_images = models.ImageField(upload_to="portfolio/")
-    nav_images = models.ImageField(upload_to="portfolio/")
+    log_images = models.ImageField(upload_to="portfolio/", null=True, blank=True)
+    top_images = models.ImageField(upload_to="portfolio/", null=True, blank=True)
+    dashboard_images = models.ImageField(upload_to="portfolio/", null=True, blank=True)
+    nav_images = models.ImageField(upload_to="portfolio/", null=True, blank=True)
     description = models.TextField(blank=True, null=True)
     deployment = models.CharField(blank=True, null=True, max_length=255)
     frontend_technologies = models.ManyToManyField(
@@ -68,6 +68,9 @@ class Portfolio(TimeStampedUUIDModel):
         verbose_name = _("Portfolio")
         verbose_name_plural = _("Portfolios")
         ordering = ["-created_at"]
+
+    def __str__(self):
+        return self.name
 
 
 class BlogPost(TimeStampedUUIDModel):
