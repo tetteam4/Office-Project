@@ -1,4 +1,4 @@
-import imge1 from "../../assets/img.jpg";
+import imge1 from "../../assets/3-2.jpg";
 
 export const Blog_Data = [
   {

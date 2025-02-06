@@ -123,7 +123,7 @@ DATABASES = {
     }
 }
 
-ADMIN_URL = "tetadmin/"
+ADMIN_URL = "admin/"
 
 
 CORS_URLS_REGEX = "^api/.*$"

@@ -38,6 +38,7 @@ class Portfolio(TimeStampedUUIDModel):
         (PORTFOLIO_CHOICES_TOP, "Top"),
         (PORTFOLIO_CHOICES_NORMAL, "Normal"),
     )
+    
     name = models.CharField(max_length=100, verbose_name=_("Project Name"))
     client = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)

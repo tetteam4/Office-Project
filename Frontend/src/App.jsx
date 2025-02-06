@@ -7,7 +7,6 @@ import HomePage from "./Pages/Home.jsx";
 import AddMember from "./Components/AddMember";
 import VerifyEmail from "./Components/verifyEmail";
 import Dashboard from "./Components/dashboard/dashboard.jsx";
-import LoginPage from "./Pages/loginPage.jsx";
 import Layout from "./Layout/Layout.jsx";
 import Services from "./Pages/services.jsx";
 import Portfolio from "./Pages/Portfolio.jsx";
@@ -17,7 +16,9 @@ import Web_Seo from "./Pages/Web_Seo.jsx";
 import PortfolioDetialsPage from "./Components/Portfolio/PortfolioDetialsPage.jsx";
 import CategoryPage from "./Components/Portfolio/CategoryPage.jsx";
 import NotFound from "./Pages/NotFound.jsx";
-
+import SignUpPage from "./Pages/SignUp/Signup.jsx";
+import { Frown, ImagePlay, Import } from "lucide-react";
+import Signin from "./Pages/SignUp/Signin.jsx";
 
 const App = () => {
   return (
@@ -47,7 +48,9 @@ const App = () => {
           </Route>
           <Route path="/verify_email/*" element={<VerifyEmail />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="/sign-in" element={<Signin />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

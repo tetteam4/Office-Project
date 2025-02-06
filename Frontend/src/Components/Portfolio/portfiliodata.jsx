@@ -1,4 +1,4 @@
-import img from "../../assets/img.jpg";
+import img from "../../assets/3-2.jpg";
 import reactjs from "../../assets/icons/tools_reactjs.png";
 import nodejs from "../../assets/icons/tools_nodejs.png";
 import bootstrap from "../../assets/icons/tools_bootstrap.png";
@@ -6,6 +6,7 @@ import django from "../../assets/icons/tools_django.png";
 import python from "../../assets/icons/tools_python.png";
 import mongodm from "../../assets/icons/tools_mogodb.png";
 import musql from "../../assets/icons/tools_musql.png";
+
 
 export const Portfolio_Data = [
   {

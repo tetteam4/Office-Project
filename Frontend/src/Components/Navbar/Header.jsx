@@ -59,7 +59,7 @@ const Header = () => {
 
         {/* Login in responsive */}
         <div className="flex justify-end lg:hidden">
-          <Link to="/signup" className="flex items-center bg-gray-50 p-1">
+          <Link to="/sign-up" className="flex items-center bg-gray-50 p-1">
             <span className="px-2 text-sm font-semibold">Login</span>
             <span>
               <LuLogIn className="text-gray-700" size={20} />
@@ -116,7 +116,7 @@ const Header = () => {
 
             {/* Login Button */}
             <Link
-              to="/signup"
+              to="/sign-up"
               className="flex items-center bg-gray-50 hover:bg-gray-100 lg:rounded-lg lg:border py-1 lg:p-2"
             >
               <span className="px-2 text-sm font-semibold">Login</span>
