@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Breadcrumb from "./Breadcrumb";
 import CategoryList from "./CategoryList";
 import RelatedCategoryPortfolio from "./RelatedCategoryPortfolio";
+import { MdDashboard, MdRoomService, MdSettings } from "react-icons/md";
 const PortfolioDetialsPage = () => {
   const { slug } = useParams();
   const location = useLocation();
@@ -49,7 +50,7 @@ const PortfolioDetialsPage = () => {
               </span>{" "}
               , contact Tech Elevate Team consultants.
             </p>
-            <p className="mt-5 text-black">
+            <p className="mt-5 text-black font-semibold">
               In the image below, you can see the overall layout of the{" "}
               {port.name} website and the elements used in its design.
             </p>
@@ -64,16 +65,16 @@ const PortfolioDetialsPage = () => {
             </button>
           </div>
           <div className="relative w-full mt-3 h-[300px] md:h-[300px]  lg:h-[400px] rounded-md overflow-hidden mb-6">
-          <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-3">
               <div className="flex flex-col md:flex-row items-center gap-4">
-                <div className="relative border rounded-md border-gray-200   shadow-2xl w-[400px] h-[300px] md:w-[670px] md:h-[400px]">
+                <div className="relative border rounded-md border-gray-200   shadow-2xl w-[400px] h-[300px] md:w-[650px] md:h-[400px]">
                   <img
                     src={port.images.laptop}
                     alt={port.name}
                     className="w-full h-full rounded-md"
                   />
                 </div>
-                <div className="relative border border-gray-200 rounded-md shadow-lg w-[150px] h-[300px] md:w-[230px] md:h-[400px]">
+                <div className="relative border border-gray-200 rounded-md shadow-lg w-[150px] h-[300px] md:w-[250px] md:h-[400px]">
                   <img
                     src={port.images.log}
                     alt={port.name}
@@ -83,7 +84,40 @@ const PortfolioDetialsPage = () => {
               </div>
             </div>
           </div>
-
+          <div className="mt-10 w-full h-auto">
+            <h3 className="text-center text-xl font-bold">{port.name}</h3>
+            {/* dashboard image */}
+            <div className="mt-5 border-t border-gray-500">
+              <div className="mt-5 flex justify-between text-gray-700 items-center ">
+                <span className="text-md font-bold">Dashboard Design</span>
+                <span>
+                  <MdDashboard size={32} />
+                </span>
+              </div>
+              <div className="flex items-center justify-center mt-10">
+                <div className="relative border rounded-md border-gray-200   shadow-2xl w-[400px] h-[300px] md:w-[750px] md:h-[400px]">
+                  <img
+                    src={port.images.laptop}
+                    alt={port.name}
+                    className="w-full h-full rounded-md"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="mt-12">
+            <p className="text-justify text-gray-600 text-base">
+              {port.description.projectOverview}
+            </p>
+            </div>
+            <div className="mt-10 border-t border-gray-500">
+            <div className="mt-5 flex justify-between text-gray-700 items-center ">
+                <span className="text-md font-bold">Technology</span>
+                <span>
+                  <MdSettings size={32} />
+                </span>
+              </div>
+            </div>
+          </div>
           {/* Add RelatedPosts component */}
         </div>
       </div>
