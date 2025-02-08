@@ -1,0 +1,11 @@
+ git rm config/__pycache__/urls.cpython-312.pyc
+git rm config/settings/__pycache__/base.cpython-312.pyc
+
+rm 'api/config/__pycache__/urls.cpython-312.pyc'
+rm 'api/config/settings/__pycache__/base.cpython-312.pyc'
+❯ git add .
+
+❯ git commit -m "Resolved merge conflicts by removing pycache files"
+
+[main 29a54043] Resolved merge conflicts by removing pycache files
+❯ git push
